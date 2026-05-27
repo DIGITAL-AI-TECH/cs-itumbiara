@@ -651,11 +651,11 @@ address { font-style: normal; }
   align-items: center;
   gap: 16px;
   padding: 16px 0;
-  border-bottom: 1px solid rgba(255,255,255,0.06);
+  border-bottom: 1px solid rgba(10,10,10,0.1);
   font-family: 'Inter', sans-serif;
   font-size: 13px;
-  font-weight: 300;
-  color: rgba(255,255,255,0.8);
+  font-weight: 400;
+  color: rgba(10,10,10,0.75);
   line-height: 1.5;
 }
 
@@ -666,9 +666,9 @@ address { font-style: normal; }
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 1px solid #B8956A;
+  border: 1px solid #8A6A42;
   font-size: 10px;
-  color: #B8956A;
+  color: #8A6A42;
   font-weight: 600;
 }
 
