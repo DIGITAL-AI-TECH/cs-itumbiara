@@ -830,3 +830,543 @@ a {
   .gallery-item img { transition: none; }
   .benefit-line { transition: none; }
 }
+
+/* ============================================================
+   ALTA CONVERSÃO — NOVAS SEÇÕES E OVERRIDES
+   Rewrite high-conversion v2 (dr-copy + cs-marketing strategy)
+   ============================================================ */
+
+/* ─── CONTAINER ─────────────────────────────────────────────── */
+.container {
+  width: 100%;
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* ─── SHARED SECTION LABELS & TITLES ────────────────────────── */
+.section-label {
+  font-family: 'Inter', sans-serif;
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: #B8956A;
+  display: block;
+  margin-bottom: 20px;
+}
+
+.section-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(32px, 6vw, 52px);
+  font-weight: 300;
+  line-height: 1.15;
+  color: #FFFFFF;
+  margin-bottom: 48px;
+}
+
+/* ─── HERO OVERRIDE (new structure) ─────────────────────────── */
+.hero {
+  min-height: 100svh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #0A0A0A;
+  text-align: center;
+  padding: 100px 24px 80px;
+}
+
+.hero-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+}
+
+.eyebrow {
+  font-family: 'Inter', sans-serif;
+  font-size: 10px;
+  font-weight: 400;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: #B8956A;
+  margin-bottom: 28px;
+}
+
+.hero-headline {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(48px, 10vw, 88px);
+  font-weight: 300;
+  line-height: 1.08;
+  letter-spacing: -0.01em;
+  color: #FFFFFF;
+  margin-bottom: 28px;
+}
+
+.hero-headline em {
+  font-style: italic;
+  color: #C4A882;
+}
+
+.hero-sub {
+  font-family: 'Inter', sans-serif;
+  font-size: clamp(14px, 2vw, 17px);
+  font-weight: 300;
+  line-height: 1.7;
+  color: rgba(255,255,255,0.72);
+  max-width: 520px;
+  margin: 0 auto 40px;
+}
+
+.btn-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: #B8956A;
+  color: #FFFFFF;
+  font-family: 'Inter', sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  padding: 18px 44px;
+  min-height: 54px;
+  border: none;
+  cursor: pointer;
+  transition: background 0.25s ease, transform 0.15s ease;
+  text-align: center;
+  width: 100%;
+  max-width: 360px;
+}
+
+.btn-cta:hover {
+  background: #A07855;
+  transform: translateY(-1px);
+}
+
+.btn-cta:active {
+  transform: translateY(0);
+}
+
+.hero-proof {
+  font-family: 'Inter', sans-serif;
+  font-size: 11px;
+  font-weight: 300;
+  letter-spacing: 0.12em;
+  color: rgba(255,255,255,0.45);
+  margin-top: 16px;
+}
+
+/* ─── PROVA SOCIAL ───────────────────────────────────────────── */
+.social-proof {
+  padding: 96px 0;
+  background: #111111;
+  text-align: center;
+}
+
+.social-proof .section-title {
+  margin-bottom: 56px;
+}
+
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 24px;
+  text-align: left;
+}
+
+.testimonial-card {
+  border: 1px solid rgba(184,149,106,0.2);
+  padding: 32px 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.testimonial-card blockquote {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 18px;
+  font-style: italic;
+  font-weight: 300;
+  line-height: 1.6;
+  color: rgba(255,255,255,0.85);
+  quotes: none;
+}
+
+.testimonial-card cite {
+  font-family: 'Inter', sans-serif;
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 0.15em;
+  color: #B8956A;
+  font-style: normal;
+}
+
+/* ─── BENEFÍCIOS OVERRIDE ────────────────────────────────────── */
+.benefits {
+  padding: 96px 0;
+  background: #0A0A0A;
+  text-align: center;
+}
+
+.benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 32px;
+  margin-bottom: 56px;
+  text-align: left;
+}
+
+.benefit-card {
+  padding: 36px 28px;
+  border-top: 1px solid rgba(184,149,106,0.3);
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.benefit-num {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 42px;
+  font-weight: 300;
+  color: rgba(184,149,106,0.25);
+  line-height: 1;
+}
+
+.benefit-card h3 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 22px;
+  font-weight: 400;
+  color: #FFFFFF;
+  line-height: 1.2;
+}
+
+.benefit-card p {
+  font-family: 'Inter', sans-serif;
+  font-size: 13px;
+  font-weight: 300;
+  line-height: 1.75;
+  color: rgba(255,255,255,0.65);
+}
+
+.benefits-cta {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+}
+
+.cta-micro {
+  font-family: 'Inter', sans-serif;
+  font-size: 11px;
+  font-weight: 300;
+  letter-spacing: 0.1em;
+  color: rgba(255,255,255,0.4);
+}
+
+/* ─── ANTI-OBJEÇÃO ───────────────────────────────────────────── */
+.anti-objection {
+  padding: 96px 0;
+  background: #111111;
+}
+
+.ao-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.ao-card {
+  padding: 40px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.07);
+  max-width: 680px;
+}
+
+.ao-card:first-child {
+  border-top: 1px solid rgba(255,255,255,0.07);
+}
+
+.ao-question {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(20px, 3.5vw, 26px);
+  font-weight: 400;
+  font-style: italic;
+  color: #C4A882;
+  line-height: 1.4;
+  margin-bottom: 16px;
+}
+
+.ao-answer {
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 1.8;
+  color: rgba(255,255,255,0.72);
+}
+
+/* ─── GALERIA OVERRIDE ───────────────────────────────────────── */
+.gallery {
+  padding: 96px 0;
+  background: #0A0A0A;
+  text-align: center;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  margin-bottom: 48px;
+}
+
+.gallery-item {
+  overflow: hidden;
+  aspect-ratio: 1 / 1;
+  margin: 0;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.5s ease;
+}
+
+.gallery-item:hover img {
+  transform: scale(1.03);
+}
+
+.gallery-cta {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+}
+
+/* ─── BÔNUS / ROLETA ─────────────────────────────────────────── */
+.bonus {
+  padding: 96px 0;
+  background: #111111;
+  text-align: center;
+}
+
+.bonus-inner {
+  max-width: 640px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+}
+
+.bonus-label {
+  margin-bottom: 20px;
+}
+
+.bonus-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(36px, 7vw, 60px);
+  font-weight: 300;
+  line-height: 1.12;
+  color: #FFFFFF;
+  margin-bottom: 32px;
+}
+
+.bonus-title em {
+  font-style: italic;
+  color: #C4A882;
+}
+
+.bonus-desc {
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 1.8;
+  color: rgba(255,255,255,0.70);
+  margin-bottom: 16px;
+  max-width: 520px;
+}
+
+.bonus-desc strong {
+  color: rgba(255,255,255,0.9);
+  font-weight: 500;
+}
+
+.bonus-prizes {
+  margin-top: 40px;
+  border: 1px solid rgba(184,149,106,0.25);
+  padding: 36px 40px;
+  text-align: left;
+  width: 100%;
+}
+
+.bonus-prizes-title {
+  font-family: 'Inter', sans-serif;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: #B8956A;
+  margin-bottom: 20px;
+}
+
+.bonus-prizes ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.bonus-prize-item {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 18px;
+  font-weight: 300;
+  color: rgba(255,255,255,0.8);
+  padding-left: 20px;
+  position: relative;
+}
+
+.bonus-prize-item::before {
+  content: '—';
+  position: absolute;
+  left: 0;
+  color: #B8956A;
+}
+
+/* ─── CTA FINAL OVERRIDE ─────────────────────────────────────── */
+.cta-final {
+  padding: 96px 0;
+  background: #0A0A0A;
+  text-align: center;
+  position: relative;
+}
+
+.urgency-badge {
+  display: inline-block;
+  font-family: 'Inter', sans-serif;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: #0A0A0A;
+  background: #C4A882;
+  padding: 8px 20px;
+  margin-bottom: 32px;
+}
+
+.cta-final-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(36px, 7vw, 64px);
+  font-weight: 300;
+  line-height: 1.12;
+  color: #FFFFFF;
+  margin-bottom: 24px;
+}
+
+.cta-final-title em {
+  font-style: italic;
+  color: #C4A882;
+}
+
+.cta-final-sub {
+  font-family: 'Inter', sans-serif;
+  font-size: 13px;
+  font-weight: 300;
+  line-height: 1.8;
+  color: rgba(255,255,255,0.55);
+  max-width: 460px;
+  margin: 0 auto 40px;
+}
+
+.btn-cta-final {
+  max-width: 400px;
+  padding: 22px 48px;
+  font-size: 13px;
+}
+
+.cta-guarantee {
+  font-family: 'Inter', sans-serif;
+  font-size: 11px;
+  font-weight: 300;
+  line-height: 1.6;
+  color: rgba(255,255,255,0.35);
+  margin-top: 20px;
+  max-width: 380px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* ─── FOOTER OVERRIDE ────────────────────────────────────────── */
+.footer {
+  padding: 64px 0 40px;
+  background: #0D0D0D;
+  border-top: 1px solid rgba(184,149,106,0.1);
+  text-align: center;
+}
+
+.footer-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+}
+
+.footer-brand {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.footer-logo {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  opacity: 0.7;
+}
+
+.footer-tagline {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 16px;
+  font-style: italic;
+  font-weight: 300;
+  color: rgba(255,255,255,0.5);
+}
+
+.footer-address {
+  font-family: 'Inter', sans-serif;
+  font-size: 12px;
+  font-weight: 300;
+  line-height: 1.8;
+  letter-spacing: 0.08em;
+  color: rgba(255,255,255,0.45);
+  font-style: normal;
+}
+
+.footer-copy {
+  font-family: 'Inter', sans-serif;
+  font-size: 11px;
+  font-weight: 300;
+  letter-spacing: 0.1em;
+  color: rgba(255,255,255,0.25);
+}
+
+/* ─── RESPONSIVE (mobile-first adjustments) ──────────────────── */
+@media (max-width: 640px) {
+  .container { padding: 0 20px; }
+
+  .hero { padding: 80px 20px 72px; }
+
+  .testimonials-grid { grid-template-columns: 1fr; }
+
+  .benefits-grid { grid-template-columns: 1fr; gap: 0; }
+  .benefit-card { padding: 28px 0; border-top: none; border-bottom: 1px solid rgba(184,149,106,0.15); }
+  .benefit-card:first-child { border-top: 1px solid rgba(184,149,106,0.15); }
+
+  .gallery-grid { gap: 8px; }
+
+  .bonus-prizes { padding: 28px 24px; }
+
+  .btn-cta { max-width: 100%; padding: 18px 32px; }
+  .btn-cta-final { max-width: 100%; padding: 20px 32px; }
+}
