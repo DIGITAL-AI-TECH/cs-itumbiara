@@ -974,3 +974,139 @@ address { font-style: normal; }
   html { scroll-behavior: auto; }
   .reveal, .hero-scroll-hint span { transition: none; animation: none; opacity: 1; transform: none; }
 }
+
+/* ─── LIGHT SECTION VARIANTS ─────────────────────────────── */
+.brand-statement--light,
+.why-cs--light,
+.vip-experience--light {
+  background: #F7F4F0 !important;
+}
+
+.section-label--dark { color: #8A6A42 !important; }
+
+.section-title--dark { color: #0A0A0A !important; }
+.section-title--dark em, .em--warm { color: #8A6A42; }
+
+.brand-title--dark { color: #0A0A0A !important; }
+.brand-title--dark em { font-style: italic; color: #8A6A42; }
+
+.brand-body--dark { color: rgba(10,10,10,0.7) !important; }
+.brand-body--highlight {
+  font-family: 'Cormorant Garamond', serif !important;
+  font-size: 22px !important;
+  font-style: italic;
+  font-weight: 500 !important;
+  color: #0A0A0A !important;
+  line-height: 1.4 !important;
+}
+
+/* Brand Details (3 col items in brand section) */
+.brand-details {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-top: 40px;
+  padding-top: 32px;
+  border-top: 1px solid rgba(138,106,66,0.2);
+}
+
+.brand-detail-item h4 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 17px;
+  font-weight: 500;
+  color: #0A0A0A;
+  margin-bottom: 8px;
+}
+
+.brand-detail-item p {
+  font-family: 'Inter', sans-serif;
+  font-size: 12px;
+  font-weight: 300;
+  line-height: 1.75;
+  color: rgba(10,10,10,0.6);
+}
+
+/* Why-cs light variants */
+.why-card--dark { border-top-color: rgba(138,106,66,0.2) !important; }
+.why-card--dark h3 { color: #0A0A0A !important; }
+.why-card--dark p { color: rgba(10,10,10,0.65) !important; }
+
+/* VIP light variants */
+.vip-title--dark { color: #0A0A0A !important; }
+.vip-body--dark { color: rgba(10,10,10,0.7) !important; }
+.vip-microcopy {
+  font-family: 'Inter', sans-serif;
+  font-size: 11px;
+  font-weight: 300;
+  letter-spacing: 0.1em;
+  color: rgba(10,10,10,0.4);
+  margin-top: 14px;
+  display: block;
+}
+
+/* CTA variant for light backgrounds */
+.btn-cta--warm {
+  background: #8A6A42 !important;
+}
+.btn-cta--warm:hover { background: #73593A !important; }
+
+/* ─── PRODUCT CARD EXTRAS ─────────────────────────────────── */
+.product-category {
+  font-family: 'Inter', sans-serif;
+  font-size: 9px;
+  font-weight: 500;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: #B8956A;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.product-info h3 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 22px;
+  font-weight: 400;
+  line-height: 1.25;
+  color: #FFFFFF;
+  margin-bottom: 12px;
+}
+
+.product-info h3 em { font-style: italic; color: #C4A882; }
+
+/* ─── GALLERY FULL GRID FIX ───────────────────────────────── */
+.gallery-editorial-header { margin-bottom: 40px; }
+
+.gallery-full-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 6px;
+  padding: 0 0 100px;
+}
+
+.gallery-full-item--tall { grid-row: span 2; aspect-ratio: auto; }
+
+/* ─── TESTIMONIAL HIGHLIGHT ───────────────────────────────── */
+.testimonial-card--highlight {
+  border-color: rgba(184,149,106,0.45) !important;
+  background: rgba(184,149,106,0.04);
+}
+
+/* ─── GALLERY RESPONSIVE ──────────────────────────────────── */
+@media (max-width: 900px) {
+  .gallery-full-grid {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+  }
+  .gallery-full-item--tall { grid-row: span 1; }
+  .brand-details { grid-template-columns: 1fr; gap: 16px; }
+}
+
+@media (max-width: 640px) {
+  .gallery-full-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 4px;
+  }
+  .gallery-full-item--tall { grid-column: span 2; aspect-ratio: 16/9; }
+  .testimonials-grid { grid-template-columns: 1fr !important; }
+}
