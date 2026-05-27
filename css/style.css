@@ -1,0 +1,810 @@
+/* ============================================================
+   CARMEN STEFFENS ITUMBIARA — VIP GROUP LANDING PAGE
+   Design: Editorial luxury, mobile-first
+   Palette: #0A0A0A | #FFFFFF | #C4A882 | #B8956A | #8A8278
+   ============================================================ */
+
+/* ─── RESET & BASE ─────────────────────────────────────────── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  background-color: #0A0A0A;
+  color: #FFFFFF;
+  font-family: 'Inter', sans-serif;
+  font-weight: 300;
+  line-height: 1.6;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* ─── TYPOGRAPHY SYSTEM ─────────────────────────────────────── */
+.serif {
+  font-family: 'Cormorant Garamond', serif;
+}
+
+/* ─── LOGO ──────────────────────────────────────────────────── */
+.logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+}
+
+.logo-text {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 18px;
+  font-weight: 300;
+  letter-spacing: 0.3em;
+  color: #FFFFFF;
+  display: block;
+  text-align: center;
+}
+
+.logo-sub {
+  font-family: 'Inter', sans-serif;
+  font-size: 9px;
+  font-weight: 300;
+  letter-spacing: 0.6em;
+  color: #B8956A;
+  display: block;
+  text-align: center;
+  margin-top: 3px;
+}
+
+/* ─── CTA BUTTON ────────────────────────────────────────────── */
+.btn-cta {
+  display: inline-block;
+  background: #B8956A;
+  color: #FFFFFF;
+  font-family: 'Inter', sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  padding: 18px 40px;
+  border-radius: 0;
+  border: none;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+  text-align: center;
+  width: 80%;
+  max-width: 340px;
+}
+
+.btn-cta:hover {
+  background: #A07855;
+  transform: translateY(-1px);
+}
+
+.btn-cta:active {
+  transform: translateY(0);
+}
+
+/* ─── SECTION DIVIDER ───────────────────────────────────────── */
+.divider {
+  width: 40px;
+  height: 1px;
+  background: #B8956A;
+  margin: 0 auto;
+}
+
+/* ─── SECTION LABEL ─────────────────────────────────────────── */
+.section-label {
+  font-family: 'Inter', sans-serif;
+  font-size: 9px;
+  font-weight: 400;
+  letter-spacing: 0.4em;
+  text-transform: uppercase;
+  color: #B8956A;
+  display: block;
+}
+
+/* ============================================================
+   01. NAVBAR
+   ============================================================ */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  padding: 24px 32px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(to bottom, rgba(10,10,10,0.95) 0%, transparent 100%);
+}
+
+/* ============================================================
+   02. HERO SECTION
+   ============================================================ */
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  text-align: center;
+  padding: 0 24px 80px;
+  overflow: hidden;
+}
+
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.hero-bg-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+}
+
+/* Fallback gradient for hero when no image */
+.hero-bg-gradient {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #0A0A0A 0%, #2A1810 60%, #1A1208 100%);
+  position: absolute;
+  inset: 0;
+}
+
+/* Subtle texture dots */
+.hero-bg-gradient::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(circle, rgba(255,255,255,0.03) 1px, transparent 1px);
+  background-size: 32px 32px;
+}
+
+/* Dark overlay for text legibility */
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(10,10,10,0.92) 0%,
+    rgba(10,10,10,0.5) 50%,
+    rgba(10,10,10,0.2) 100%
+  );
+  z-index: 1;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 520px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 28px;
+}
+
+.hero-eyebrow {
+  font-family: 'Inter', sans-serif;
+  font-size: 9px;
+  font-weight: 400;
+  letter-spacing: 0.45em;
+  text-transform: uppercase;
+  color: #B8956A;
+}
+
+.hero-headline {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(40px, 11vw, 64px);
+  font-weight: 300;
+  line-height: 1.08;
+  letter-spacing: 0.01em;
+  color: #FFFFFF;
+}
+
+.hero-headline em {
+  font-style: italic;
+  color: #C4A882;
+}
+
+.hero-sub {
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 1.7;
+  color: rgba(255,255,255,0.8);
+  max-width: 420px;
+}
+
+.hero-proof {
+  font-family: 'Inter', sans-serif;
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 0.05em;
+  color: #8A8278;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.hero-proof::before {
+  content: '';
+  display: inline-block;
+  width: 20px;
+  height: 1px;
+  background: #B8956A;
+  flex-shrink: 0;
+}
+
+.hero-proof::after {
+  content: '';
+  display: inline-block;
+  width: 20px;
+  height: 1px;
+  background: #B8956A;
+  flex-shrink: 0;
+}
+
+/* ============================================================
+   03. BENEFITS SECTION
+   ============================================================ */
+.benefits {
+  background: #FFFFFF;
+  padding: 80px 24px;
+}
+
+.benefits-inner {
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 56px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+.section-header .section-label {
+  color: #B8956A;
+}
+
+.section-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(32px, 7vw, 48px);
+  font-weight: 300;
+  line-height: 1.15;
+  letter-spacing: 0.01em;
+  color: #0A0A0A;
+}
+
+.section-title.light {
+  color: #FFFFFF;
+}
+
+.benefits-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2px;
+}
+
+.benefit-card {
+  background: #FFFFFF;
+  border: 1px solid rgba(196,168,130,0.2);
+  padding: 40px 32px;
+  position: relative;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.benefit-card:hover {
+  border-color: rgba(184,149,106,0.5);
+  box-shadow: 0 1px 2px rgba(0,0,0,0.08);
+}
+
+.benefit-number {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 0.3em;
+  color: #B8956A;
+  display: block;
+  margin-bottom: 16px;
+}
+
+.benefit-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 24px;
+  font-weight: 400;
+  letter-spacing: 0.02em;
+  color: #0A0A0A;
+  margin-bottom: 12px;
+  line-height: 1.2;
+}
+
+.benefit-desc {
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 1.75;
+  color: #4A4540;
+}
+
+.benefit-line {
+  position: absolute;
+  bottom: 0;
+  left: 32px;
+  width: 0;
+  height: 1px;
+  background: #B8956A;
+  transition: width 0.4s ease;
+}
+
+.benefit-card:hover .benefit-line {
+  width: calc(100% - 64px);
+}
+
+/* ============================================================
+   04. GALLERY SECTION
+   ============================================================ */
+.gallery {
+  background: #0A0A0A;
+  padding: 80px 0;
+}
+
+.gallery-header {
+  text-align: center;
+  padding: 0 24px;
+  margin-bottom: 48px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+.gallery-subtitle {
+  font-family: 'Inter', sans-serif;
+  font-size: 13px;
+  font-weight: 300;
+  letter-spacing: 0.05em;
+  color: #8A8278;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2px;
+  padding: 0 2px;
+}
+
+.gallery-item {
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+  position: relative;
+  background: #141414;
+}
+
+.gallery-item:first-child {
+  aspect-ratio: 2 / 1;
+  grid-column: 1 / -1;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+  display: block;
+}
+
+.gallery-item:hover img {
+  transform: scale(1.03);
+}
+
+/* Placeholder elegante quando não há imagem */
+.gallery-placeholder {
+  width: 100%;
+  height: 100%;
+  background: #141414;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  min-height: 200px;
+}
+
+.gallery-placeholder-line {
+  width: 1px;
+  height: 40px;
+  background: rgba(196,168,130,0.3);
+}
+
+.gallery-placeholder-text {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 11px;
+  font-weight: 300;
+  letter-spacing: 0.3em;
+  color: rgba(196,168,130,0.4);
+  text-transform: uppercase;
+  text-align: center;
+  padding: 0 16px;
+}
+
+/* ============================================================
+   05. HOW IT WORKS SECTION
+   ============================================================ */
+.how-it-works {
+  background: #FFFFFF;
+  padding: 80px 24px;
+}
+
+.how-it-works-inner {
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+.steps {
+  margin-top: 56px;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.step {
+  display: grid;
+  grid-template-columns: 56px 1fr;
+  gap: 24px;
+  padding: 32px 0;
+  border-bottom: 1px solid rgba(196,168,130,0.2);
+  align-items: start;
+}
+
+.step:first-child {
+  border-top: 1px solid rgba(196,168,130,0.2);
+}
+
+.step-number {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 48px;
+  font-weight: 300;
+  line-height: 1;
+  color: rgba(196,168,130,0.3);
+  padding-top: 4px;
+}
+
+.step-content {
+  padding-top: 8px;
+}
+
+.step-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 22px;
+  font-weight: 400;
+  letter-spacing: 0.02em;
+  color: #0A0A0A;
+  margin-bottom: 8px;
+  line-height: 1.2;
+}
+
+.step-desc {
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 1.75;
+  color: #4A4540;
+}
+
+/* ============================================================
+   06. CTA FINAL SECTION
+   ============================================================ */
+.cta-final {
+  background: #0A0A0A;
+  padding: 80px 24px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.cta-final::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(circle, rgba(255,255,255,0.02) 1px, transparent 1px);
+  background-size: 32px 32px;
+}
+
+.cta-final-inner {
+  position: relative;
+  z-index: 1;
+  max-width: 560px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 32px;
+}
+
+.cta-final-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(28px, 7vw, 44px);
+  font-weight: 300;
+  line-height: 1.2;
+  letter-spacing: 0.01em;
+  color: #FFFFFF;
+}
+
+.cta-final-title em {
+  font-style: italic;
+  color: #C4A882;
+}
+
+/* Roleta Card */
+.roleta-card {
+  border: 1px solid rgba(184,149,106,0.25);
+  padding: 32px 28px;
+  width: 100%;
+  max-width: 400px;
+  position: relative;
+  background: rgba(255,255,255,0.02);
+}
+
+.roleta-card::before {
+  content: '';
+  position: absolute;
+  top: -1px;
+  left: 24px;
+  right: 24px;
+  height: 1px;
+  background: #B8956A;
+}
+
+.roleta-eyebrow {
+  font-family: 'Inter', sans-serif;
+  font-size: 9px;
+  font-weight: 400;
+  letter-spacing: 0.45em;
+  text-transform: uppercase;
+  color: #B8956A;
+  display: block;
+  margin-bottom: 16px;
+}
+
+.roleta-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 22px;
+  font-weight: 400;
+  letter-spacing: 0.02em;
+  color: #FFFFFF;
+  margin-bottom: 12px;
+  line-height: 1.3;
+}
+
+.roleta-desc {
+  font-family: 'Inter', sans-serif;
+  font-size: 13px;
+  font-weight: 300;
+  line-height: 1.75;
+  color: #8A8278;
+}
+
+.roleta-desc strong {
+  color: #C4A882;
+  font-weight: 400;
+}
+
+/* Urgency note */
+.urgency-note {
+  font-family: 'Inter', sans-serif;
+  font-size: 11px;
+  font-weight: 300;
+  letter-spacing: 0.05em;
+  color: #8A8278;
+}
+
+/* ============================================================
+   07. FOOTER
+   ============================================================ */
+.footer {
+  background: #040404;
+  border-top: 1px solid rgba(196,168,130,0.1);
+  padding: 56px 24px 40px;
+  text-align: center;
+}
+
+.footer-inner {
+  max-width: 640px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 32px;
+}
+
+.footer-tagline {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 16px;
+  font-weight: 300;
+  letter-spacing: 0.04em;
+  color: rgba(255,255,255,0.6);
+  line-height: 1.5;
+}
+
+.footer-info {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.footer-info-item {
+  font-family: 'Inter', sans-serif;
+  font-size: 12px;
+  font-weight: 300;
+  letter-spacing: 0.05em;
+  color: #8A8278;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.footer-info-item .dot {
+  width: 3px;
+  height: 3px;
+  background: #B8956A;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.footer-copyright {
+  font-family: 'Inter', sans-serif;
+  font-size: 10px;
+  font-weight: 300;
+  letter-spacing: 0.08em;
+  color: rgba(138,130,120,0.4);
+}
+
+/* ============================================================
+   RESPONSIVE — DESKTOP (min-width: 768px)
+   ============================================================ */
+@media (min-width: 768px) {
+
+  /* Navbar */
+  .navbar {
+    padding: 28px 48px;
+  }
+
+  /* Hero */
+  .hero {
+    padding: 0 48px 120px;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .hero-content {
+    gap: 32px;
+  }
+
+  /* Benefits */
+  .benefits {
+    padding: 120px 48px;
+  }
+
+  .benefits-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 2px;
+  }
+
+  /* Gallery */
+  .gallery {
+    padding: 120px 0;
+  }
+
+  .gallery-grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2px;
+    padding: 0 2px;
+  }
+
+  .gallery-item:first-child {
+    aspect-ratio: 1 / 1;
+    grid-column: auto;
+  }
+
+  /* How it works */
+  .how-it-works {
+    padding: 120px 48px;
+  }
+
+  .how-it-works-inner {
+    max-width: 720px;
+  }
+
+  /* CTA Final */
+  .cta-final {
+    padding: 120px 48px;
+  }
+
+  /* Footer */
+  .footer {
+    padding: 72px 48px 48px;
+  }
+
+  .footer-info {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 24px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .hero-sub {
+    font-size: 15px;
+  }
+
+  .benefit-card {
+    padding: 48px 40px;
+  }
+}
+
+/* ============================================================
+   ANIMATIONS — subtle, non-parallax
+   ============================================================ */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-in {
+  animation: fadeInUp 0.8s ease forwards;
+}
+
+.animate-in-delay-1 { animation-delay: 0.1s; opacity: 0; }
+.animate-in-delay-2 { animation-delay: 0.2s; opacity: 0; }
+.animate-in-delay-3 { animation-delay: 0.3s; opacity: 0; }
+.animate-in-delay-4 { animation-delay: 0.5s; opacity: 0; }
+.animate-in-delay-5 { animation-delay: 0.7s; opacity: 0; }
+
+/* Scroll reveal (applied via JS IntersectionObserver) */
+.reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
