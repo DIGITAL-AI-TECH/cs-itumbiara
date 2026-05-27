@@ -75,7 +75,9 @@ a {
 
 /* ─── CTA BUTTON ────────────────────────────────────────────── */
 .btn-cta {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   background: #B8956A;
   color: #FFFFFF;
   font-family: 'Inter', sans-serif;
@@ -84,6 +86,7 @@ a {
   letter-spacing: 0.18em;
   text-transform: uppercase;
   padding: 18px 40px;
+  min-height: 48px;
   border-radius: 0;
   border: none;
   cursor: pointer;
@@ -474,6 +477,7 @@ a {
   display: flex;
   flex-direction: column;
   gap: 0;
+  list-style: none;
 }
 
 .step {
@@ -807,4 +811,22 @@ a {
 .reveal.visible {
   opacity: 1;
   transform: translateY(0);
+}
+
+/* ─── NAVBAR SCROLLED STATE ──────────────────────────────── */
+.navbar--scrolled {
+  background: rgba(10,10,10,0.97) !important;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border-bottom: 1px solid rgba(184,149,106,0.1);
+}
+
+/* ─── REDUCED MOTION ─────────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .animate-in { animation: none; opacity: 1; }
+  .reveal { opacity: 1; transform: none; transition: none; }
+  .btn-cta { transition: background 0.1s ease; }
+  .gallery-item img { transition: none; }
+  .benefit-line { transition: none; }
 }
