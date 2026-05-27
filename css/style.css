@@ -1129,7 +1129,18 @@ address { font-style: normal; }
 
 /* VIP light variants */
 .vip-title--dark { color: #0A0A0A !important; }
+.vip-title--dark em { color: #8A6A42 !important; }
 .vip-body--dark { color: rgba(10,10,10,0.7) !important; }
+
+.vip-experience--light .vip-benefit-item {
+  color: rgba(10,10,10,0.8) !important;
+  border-bottom-color: rgba(10,10,10,0.08) !important;
+}
+
+.vip-experience--light .vip-check {
+  border-color: #8A6A42 !important;
+  color: #8A6A42 !important;
+}
 .vip-microcopy {
   font-family: 'Inter', sans-serif;
   font-size: 11px;
