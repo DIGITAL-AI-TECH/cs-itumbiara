@@ -3,16 +3,797 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Carmen Steffens Itumbiara — Couro Legítimo. Moda Premium.</title>
-  <meta name="description" content="Carmen Steffens Itumbiara. Bolsas, calçados e acessórios em couro legítimo. A maior marca de moda feminina em couro do Brasil agora em Itumbiara/GO.">
-  <meta property="og:title" content="Carmen Steffens Itumbiara — Couro Legítimo. Design Exclusivo.">
-  <meta property="og:description" content="Não é só uma bolsa. É uma Carmen Steffens. Entre no grupo VIP e compre com vantagens exclusivas.">
-  <meta property="og:image" content="images/new-editorial-grande.jpg">
-  <meta property="og:type" content="website">
+  <title>Game of Love — Carmen Steffens Itumbiara · Dia dos Namorados</title>
+  <meta name="description" content="Game of Love. O presente perfeito para o Dia dos Namorados. Carmen Steffens Itumbiara — couro legítimo, design exclusivo.">
+  <meta property="og:title" content="Game of Love — Carmen Steffens Itumbiara">
+  <meta property="og:description" content="Nas compras acima de R$2.999,90 você ganha um dominó exclusivo CS. Dia dos Namorados até 12/06.">
+  <meta property="og:image" content="images/insta-look-03.jpg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { font-size: 16px; scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+    body {
+      background: #0D0609;
+      color: #FFFFFF;
+      font-family: 'Inter', sans-serif;
+      font-weight: 300;
+      line-height: 1.6;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+    img { display: block; max-width: 100%; height: auto; }
+    a { text-decoration: none; color: inherit; }
+    address { font-style: normal; }
+
+    .container {
+      width: 100%;
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 0 32px;
+    }
+
+    /* ── NAVBAR ───────────────────────────────────── */
+    .navbar {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      padding: 20px 32px;
+      transition: background 0.3s ease, padding 0.3s ease;
+    }
+    .navbar-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      max-width: 1080px;
+      margin: 0 auto;
+    }
+    .navbar--scrolled {
+      background: rgba(13,6,9,0.96);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      padding: 14px 32px;
+      border-bottom: 1px solid rgba(190,100,120,0.15);
+    }
+    .cs-logo { display: flex; align-items: center; gap: 12px; }
+    .cs-logo-monogram {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 28px;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      color: #C4A882;
+      line-height: 1;
+    }
+    .cs-logo-text { display: flex; flex-direction: column; gap: 1px; }
+    .cs-logo-brand {
+      font-family: 'Inter', sans-serif;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.22em;
+      color: #FFFFFF;
+    }
+    .cs-logo-city {
+      font-family: 'Inter', sans-serif;
+      font-size: 9px;
+      font-weight: 300;
+      letter-spacing: 0.35em;
+      color: rgba(255,255,255,0.45);
+      text-transform: uppercase;
+    }
+    .btn-nav {
+      font-family: 'Inter', sans-serif;
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: #FFFFFF;
+      border: 1px solid rgba(255,255,255,0.3);
+      padding: 10px 22px;
+      transition: all 0.3s ease;
+    }
+    .btn-nav:hover { background: rgba(255,255,255,0.08); border-color: #C4A882; color: #C4A882; }
+
+    /* ── HERO ─────────────────────────────────────── */
+    .hero-full {
+      position: relative;
+      min-height: 100svh;
+      display: flex;
+      align-items: flex-end;
+      padding-bottom: 80px;
+      overflow: hidden;
+    }
+    .hero-bg { position: absolute; inset: 0; z-index: 0; }
+    .hero-bg-img { width: 100%; height: 100%; object-fit: cover; object-position: center top; }
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        160deg,
+        rgba(13,6,9,0.3) 0%,
+        rgba(90,20,40,0.45) 30%,
+        rgba(13,6,9,0.88) 70%,
+        rgba(13,6,9,0.97) 100%
+      );
+    }
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0;
+    }
+    .campaign-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      border: 1px solid rgba(190,100,120,0.5);
+      background: rgba(190,100,120,0.1);
+      padding: 6px 16px;
+      margin-bottom: 24px;
+      font-family: 'Inter', sans-serif;
+      font-size: 9px;
+      font-weight: 600;
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      color: #E8A0B0;
+    }
+    .hero-eyebrow {
+      font-family: 'Inter', sans-serif;
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 0.4em;
+      text-transform: uppercase;
+      color: #C4A882;
+      margin-bottom: 20px;
+    }
+    .hero-headline {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(52px, 9vw, 110px);
+      font-weight: 300;
+      line-height: 0.92;
+      letter-spacing: -0.01em;
+      margin-bottom: 8px;
+    }
+    .hero-headline .game { font-style: italic; color: #E8A0B0; }
+    .hero-headline .love { font-weight: 600; color: #FFFFFF; }
+    .hero-subline {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(18px, 2.8vw, 28px);
+      font-weight: 300;
+      font-style: italic;
+      color: rgba(255,255,255,0.65);
+      margin-bottom: 32px;
+      line-height: 1.4;
+    }
+    .hero-period {
+      display: inline-block;
+      background: rgba(190,100,120,0.2);
+      border: 1px solid rgba(190,100,120,0.4);
+      padding: 8px 18px;
+      font-family: 'Inter', sans-serif;
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.2em;
+      color: #E8A0B0;
+      margin-bottom: 36px;
+    }
+    .btn-cta {
+      display: inline-block;
+      font-family: 'Inter', sans-serif;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      background: #BE6478;
+      color: #FFFFFF;
+      padding: 20px 48px;
+      border: none;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      margin-bottom: 16px;
+    }
+    .btn-cta:hover { background: #A84E63; }
+    .btn-cta--gold { background: #C4A882; }
+    .btn-cta--gold:hover { background: #B8956A; }
+    .hero-proof {
+      font-family: 'Inter', sans-serif;
+      font-size: 11px;
+      font-weight: 300;
+      color: rgba(255,255,255,0.4);
+      letter-spacing: 0.1em;
+    }
+    .hero-scroll-hint {
+      position: absolute;
+      bottom: 28px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 2;
+    }
+    .hero-scroll-hint span {
+      display: block;
+      width: 1px;
+      height: 48px;
+      background: linear-gradient(to bottom, transparent, rgba(190,100,120,0.6));
+      animation: scrollPulse 2s ease-in-out infinite;
+    }
+    @keyframes scrollPulse { 0%,100%{opacity:0;transform:scaleY(0.5)} 50%{opacity:1;transform:scaleY(1)} }
+
+    /* ── DOMINO DECORATION ────────────────────────── */
+    .domino-row {
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+      padding: 40px 0;
+      overflow: hidden;
+    }
+    .domino-tile {
+      width: 48px;
+      height: 88px;
+      border: 1px solid rgba(190,100,120,0.4);
+      border-radius: 6px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-around;
+      padding: 8px 4px;
+      background: rgba(190,100,120,0.06);
+      position: relative;
+    }
+    .domino-tile::after {
+      content: '';
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%,-50%);
+      width: 80%;
+      height: 1px;
+      background: rgba(190,100,120,0.3);
+    }
+    .domino-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: #BE6478;
+    }
+    .domino-dots-top, .domino-dots-bottom {
+      display: flex;
+      flex-wrap: wrap;
+      width: 28px;
+      gap: 3px;
+      justify-content: center;
+    }
+
+    /* ── SHARED ───────────────────────────────────── */
+    .section-label {
+      font-family: 'Inter', sans-serif;
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 0.4em;
+      text-transform: uppercase;
+      color: #BE6478;
+      display: block;
+      margin-bottom: 18px;
+    }
+    .section-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(34px, 5.5vw, 58px);
+      font-weight: 300;
+      line-height: 1.12;
+      letter-spacing: -0.01em;
+      margin-bottom: 32px;
+    }
+    .section-title em { font-style: italic; color: #E8A0B0; }
+
+    /* ── CAMPANHA ─────────────────────────────────── */
+    .campanha {
+      background: #F7F0F2;
+      padding: 100px 0;
+    }
+    .campanha-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+      align-items: center;
+    }
+    .campanha-copy .section-label { color: #8B3650; }
+    .campanha-copy .section-title { color: #0D0609; }
+    .campanha-copy .section-title em { color: #BE6478; }
+    .campanha-body {
+      font-family: 'Inter', sans-serif;
+      font-size: 15px;
+      font-weight: 300;
+      color: rgba(13,6,9,0.7);
+      line-height: 1.8;
+      margin-bottom: 20px;
+    }
+    .campanha-body strong { font-weight: 600; color: #0D0609; }
+    .campanha-image { position: relative; overflow: hidden; aspect-ratio: 3/4; }
+    .campanha-image img { width: 100%; height: 100%; object-fit: cover; }
+    .campanha-image-badge {
+      position: absolute;
+      bottom: 24px;
+      left: 24px;
+      background: rgba(13,6,9,0.85);
+      border: 1px solid rgba(190,100,120,0.5);
+      padding: 12px 18px;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 18px;
+      font-style: italic;
+      color: #E8A0B0;
+    }
+
+    /* ── BRINDE ───────────────────────────────────── */
+    .brinde {
+      background: #0D0609;
+      padding: 100px 0;
+      text-align: center;
+    }
+    .brinde-inner { max-width: 700px; margin: 0 auto; }
+    .brinde-domino {
+      display: flex;
+      gap: 6px;
+      justify-content: center;
+      margin-bottom: 48px;
+    }
+    .brinde-tile {
+      width: 52px;
+      height: 96px;
+      border: 1.5px solid #BE6478;
+      border-radius: 7px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-around;
+      padding: 10px 4px;
+      background: rgba(190,100,120,0.08);
+      position: relative;
+    }
+    .brinde-tile::after {
+      content: '';
+      position: absolute;
+      left: 50%; top: 50%;
+      transform: translate(-50%,-50%);
+      width: 75%;
+      height: 1.5px;
+      background: rgba(190,100,120,0.5);
+    }
+    .brinde-dot {
+      width: 8px; height: 8px;
+      border-radius: 50%;
+      background: #BE6478;
+      box-shadow: 0 0 6px rgba(190,100,120,0.5);
+    }
+    .brinde-dots { display: flex; flex-wrap: wrap; width: 30px; gap: 4px; justify-content: center; }
+    .brinde-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(30px, 5vw, 50px);
+      font-weight: 300;
+      line-height: 1.15;
+      margin-bottom: 24px;
+    }
+    .brinde-title em { font-style: italic; color: #E8A0B0; }
+    .brinde-body {
+      font-size: 15px;
+      font-weight: 300;
+      color: rgba(255,255,255,0.65);
+      line-height: 1.8;
+      margin-bottom: 12px;
+    }
+    .brinde-valor {
+      display: inline-block;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 22px;
+      font-style: italic;
+      color: #E8A0B0;
+      border: 1px solid rgba(190,100,120,0.4);
+      padding: 10px 28px;
+      margin: 24px 0 40px;
+    }
+    .brinde-obs {
+      font-size: 11px;
+      font-weight: 300;
+      color: rgba(255,255,255,0.3);
+      letter-spacing: 0.05em;
+      line-height: 1.7;
+    }
+
+    /* ── PRODUTOS ─────────────────────────────────── */
+    .produtos {
+      background: #0D0609;
+      padding: 100px 0;
+    }
+    .produtos-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+    .produto-card { display: flex; flex-direction: column; }
+    .produto-img-wrap {
+      position: relative;
+      aspect-ratio: 3/4;
+      overflow: hidden;
+      background: #1A0D11;
+    }
+    .produto-img-wrap img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+    .produto-card:hover .produto-img-wrap img { transform: scale(1.04); }
+    .produto-badge {
+      position: absolute;
+      top: 16px; left: 16px;
+      background: #BE6478;
+      color: #fff;
+      font-family: 'Inter', sans-serif;
+      font-size: 8px;
+      font-weight: 700;
+      letter-spacing: 0.25em;
+      padding: 5px 10px;
+      text-transform: uppercase;
+    }
+    .produto-info {
+      padding: 20px 0 8px;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      flex: 1;
+    }
+    .produto-category {
+      font-family: 'Inter', sans-serif;
+      font-size: 9px;
+      font-weight: 600;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.35);
+    }
+    .produto-info h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 20px;
+      font-weight: 400;
+      line-height: 1.25;
+      color: #fff;
+    }
+    .produto-info h3 em { font-style: italic; color: #E8A0B0; }
+    .produto-info p {
+      font-family: 'Inter', sans-serif;
+      font-size: 12px;
+      font-weight: 300;
+      color: rgba(255,255,255,0.5);
+      line-height: 1.6;
+    }
+    .produto-cta-hint {
+      font-family: 'Inter', sans-serif;
+      font-size: 11px;
+      font-weight: 400;
+      color: #BE6478;
+      margin-top: 4px;
+    }
+
+    /* ── PERÍODO ──────────────────────────────────── */
+    .periodo {
+      background: #BE6478;
+      padding: 64px 0;
+    }
+    .periodo-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 40px;
+    }
+    .periodo-copy h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(30px, 4vw, 48px);
+      font-weight: 300;
+      color: #FFFFFF;
+      line-height: 1.15;
+    }
+    .periodo-copy p {
+      font-size: 14px;
+      font-weight: 300;
+      color: rgba(255,255,255,0.8);
+      margin-top: 10px;
+    }
+    .periodo-dates {
+      display: flex;
+      gap: 24px;
+      flex-shrink: 0;
+    }
+    .periodo-date {
+      text-align: center;
+      border: 1px solid rgba(255,255,255,0.35);
+      padding: 20px 28px;
+      min-width: 110px;
+    }
+    .periodo-date .dia {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 42px;
+      font-weight: 300;
+      color: #fff;
+      line-height: 1;
+    }
+    .periodo-date .mes {
+      font-family: 'Inter', sans-serif;
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 0.3em;
+      color: rgba(255,255,255,0.7);
+      text-transform: uppercase;
+      margin-top: 4px;
+    }
+    .periodo-divider {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 32px;
+      color: rgba(255,255,255,0.5);
+    }
+
+    /* ── VIP CTA ──────────────────────────────────── */
+    .vip-cta {
+      background: #F7F0F2;
+      padding: 100px 0;
+    }
+    .vip-cta-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 72px;
+      align-items: center;
+    }
+    .vip-cta-copy .section-label { color: #8B3650; }
+    .vip-cta-copy .section-title { color: #0D0609; }
+    .vip-cta-copy .section-title em { color: #BE6478; }
+    .vip-body {
+      font-family: 'Inter', sans-serif;
+      font-size: 15px;
+      font-weight: 300;
+      color: rgba(13,6,9,0.7);
+      line-height: 1.8;
+      margin-bottom: 16px;
+    }
+    .vip-benefits { margin: 28px 0 36px; display: flex; flex-direction: column; gap: 0; }
+    .vip-benefit-item {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      padding: 14px 0;
+      border-bottom: 1px solid rgba(13,6,9,0.1);
+      font-family: 'Inter', sans-serif;
+      font-size: 13px;
+      font-weight: 500;
+      color: #1A0D11;
+      line-height: 1.5;
+    }
+    .vip-check {
+      flex-shrink: 0;
+      width: 22px;
+      height: 22px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1.5px solid #BE6478;
+      font-size: 10px;
+      color: #BE6478;
+      font-weight: 700;
+    }
+    .vip-microcopy {
+      font-size: 11px;
+      font-weight: 300;
+      color: rgba(13,6,9,0.45);
+      letter-spacing: 0.08em;
+      margin-top: -4px;
+    }
+    .vip-image { position: relative; overflow: hidden; aspect-ratio: 4/5; }
+    .vip-image img { width: 100%; height: 100%; object-fit: cover; }
+    .vip-image-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, transparent 50%, rgba(13,6,9,0.6) 100%);
+    }
+    .vip-image-tag {
+      position: absolute;
+      bottom: 24px;
+      left: 24px;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 20px;
+      font-style: italic;
+      color: #E8A0B0;
+    }
+
+    /* ── GALERIA ──────────────────────────────────── */
+    .galeria {
+      background: #0D0609;
+      padding: 0;
+    }
+    .galeria-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 4px;
+    }
+    .gal-item {
+      overflow: hidden;
+      aspect-ratio: 3/4;
+      background: #1A0D11;
+      position: relative;
+    }
+    .gal-item img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; }
+    .gal-item:hover img { transform: scale(1.05); }
+    .gal-item--wide { grid-column: span 2; aspect-ratio: 16/9; }
+    .gal-item--tall { grid-row: span 2; }
+
+    /* ── CTA FINAL ────────────────────────────────── */
+    .cta-final {
+      background: #0D0609;
+      padding: 100px 0;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .cta-final::before {
+      content: 'GAME OF LOVE';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(60px, 12vw, 160px);
+      font-weight: 700;
+      font-style: italic;
+      color: rgba(190,100,120,0.04);
+      white-space: nowrap;
+      pointer-events: none;
+      z-index: 0;
+    }
+    .cta-final-content { position: relative; z-index: 1; }
+    .urgency-badge {
+      display: inline-block;
+      border: 1px solid #BE6478;
+      color: #E8A0B0;
+      font-family: 'Inter', sans-serif;
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 0.4em;
+      padding: 6px 18px;
+      margin-bottom: 32px;
+      text-transform: uppercase;
+    }
+    .cta-final-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(36px, 6vw, 68px);
+      font-weight: 300;
+      line-height: 1.12;
+      margin-bottom: 24px;
+    }
+    .cta-final-title em { font-style: italic; color: #E8A0B0; }
+    .cta-final-sub {
+      font-size: 15px;
+      font-weight: 300;
+      color: rgba(255,255,255,0.6);
+      line-height: 1.8;
+      max-width: 560px;
+      margin: 0 auto 48px;
+    }
+    .btn-cta-final {
+      display: inline-block;
+      font-family: 'Inter', sans-serif;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      background: #BE6478;
+      color: #FFFFFF;
+      padding: 22px 56px;
+      border: none;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    .btn-cta-final:hover { background: #A84E63; }
+    .cta-guarantee {
+      font-size: 11px;
+      font-weight: 300;
+      color: rgba(255,255,255,0.35);
+      margin-top: 24px;
+      line-height: 1.7;
+    }
+
+    /* ── FOOTER ───────────────────────────────────── */
+    .footer {
+      background: #080305;
+      padding: 64px 0 40px;
+      border-top: 1px solid rgba(190,100,120,0.12);
+    }
+    .footer-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 48px;
+      align-items: start;
+    }
+    .footer-tagline {
+      font-size: 12px;
+      font-weight: 300;
+      color: rgba(255,255,255,0.3);
+      margin-top: 12px;
+      letter-spacing: 0.08em;
+    }
+    .footer-address {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      font-size: 12px;
+      font-weight: 300;
+      color: rgba(255,255,255,0.45);
+      line-height: 1.5;
+    }
+    .footer-trust {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    .footer-trust-item {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+    .footer-trust-item strong {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 20px;
+      font-weight: 400;
+      color: #C4A882;
+    }
+    .footer-trust-item span {
+      font-size: 9px;
+      font-weight: 300;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.3);
+    }
+    .footer-copy {
+      grid-column: 1 / -1;
+      font-size: 10px;
+      font-weight: 300;
+      color: rgba(255,255,255,0.2);
+      text-align: center;
+      padding-top: 32px;
+      border-top: 1px solid rgba(255,255,255,0.05);
+      margin-top: 16px;
+      letter-spacing: 0.1em;
+    }
+
+    /* ── REVEAL ───────────────────────────────────── */
+    .reveal { opacity: 0; transform: translateY(18px); transition: opacity 0.6s ease, transform 0.6s ease; }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+
+    /* ── RESPONSIVE ───────────────────────────────── */
+    @media (max-width: 900px) {
+      .container { padding: 0 24px; }
+      .campanha-grid, .vip-cta-inner { grid-template-columns: 1fr; gap: 40px; }
+      .campanha-image { order: -1; }
+      .produtos-grid { grid-template-columns: 1fr 1fr; gap: 16px; }
+      .periodo-inner { flex-direction: column; text-align: center; }
+      .periodo-dates { justify-content: center; }
+      .footer-inner { grid-template-columns: 1fr; text-align: center; }
+      .galeria-grid { grid-template-columns: 1fr 1fr; }
+      .gal-item--wide { grid-column: span 2; aspect-ratio: 3/2; }
+    }
+    @media (max-width: 640px) {
+      .hero-full { padding-top: 72px; padding-bottom: 60px; }
+      .navbar { padding: 16px 20px; }
+      .navbar--scrolled { padding: 12px 20px; }
+      .produtos-grid { grid-template-columns: 1fr 1fr; gap: 12px; }
+      .btn-cta { padding: 18px 32px; width: 100%; text-align: center; }
+      .btn-cta-final { padding: 18px 32px; width: 100%; }
+      .periodo-dates { gap: 12px; }
+      .periodo-date { padding: 14px 20px; min-width: 90px; }
+      .galeria-grid { grid-template-columns: 1fr 1fr; gap: 3px; }
+      .gal-item--tall { grid-row: span 1; }
+      .brinde-domino { gap: 4px; }
+      .brinde-tile { width: 44px; height: 80px; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      .reveal { transition: none; opacity: 1; transform: none; }
+    }
+  </style>
 </head>
 <body>
 
@@ -30,159 +811,189 @@
     </div>
   </nav>
 
-  <!-- ══ 01 HERO ═══════════════════════════════════════════════ -->
+  <!-- ══ 01 HERO ════════════════════════════════════════════════ -->
   <section class="hero-full">
     <div class="hero-bg">
-      <img src="images/insta-look-03.jpg" alt="Carmen Steffens Itumbiara" class="hero-bg-img">
+      <img src="images/insta-look-03.jpg" alt="Game of Love — Carmen Steffens" class="hero-bg-img">
       <div class="hero-overlay"></div>
     </div>
     <div class="hero-content container">
-      <p class="eyebrow">Carmen Steffens &bull; Itumbiara &bull; Couro Legítimo</p>
+      <span class="campaign-badge">&#9829; Dia dos Namorados 2026</span>
+      <p class="hero-eyebrow">Carmen Steffens · Itumbiara · Coleção Alto Inverno</p>
       <h1 class="hero-headline">
-        Couro legítimo.<br>
-        Design exclusivo.<br>
-        <em>Carmen Steffens.</em>
+        <span class="game">Game</span><br>
+        <span class="love">of Love.</span>
       </h1>
-      <p class="hero-sub">
-        A maior marca de moda feminina em couro do Brasil tem uma loja em Itumbiara.
-        Bolsas, calçados e acessórios que fazem você se sentir única — com atendimento que você só encontra em loja de grife.
+      <p class="hero-subline">
+        O amor é uma combinação de encontros,<br>
+        escolhas e detalhes que se completam.
       </p>
-      <a href="https://chat.whatsapp.com/LINK_DO_GRUPO" class="btn-cta" onclick="trackCta('hero')" target="_blank" rel="noopener">
-        CONHECER A COLEÇÃO
+      <div class="hero-period">&#9829;&nbsp; CAMPANHA: 26 MAI — 12 JUN</div>
+      <a href="https://chat.whatsapp.com/LINK_DO_GRUPO" class="btn-cta" target="_blank" rel="noopener">
+        VER A COLEÇÃO
       </a>
       <p class="hero-proof">Loja física no Centro de Itumbiara · Envio para todo o Brasil</p>
     </div>
     <div class="hero-scroll-hint"><span></span></div>
   </section>
 
-  <!-- ══ 02 SOBRE A CS (fundo claro) ══════════════════════════ -->
-  <section class="brand-statement brand-statement--light">
+  <!-- ══ 02 CAMPANHA ════════════════════════════════════════════ -->
+  <section class="campanha">
     <div class="container">
-      <div class="brand-grid">
-        <div class="brand-copy">
-          <p class="section-label section-label--dark">A marca</p>
-          <h2 class="brand-title brand-title--dark">
-            Mais de 30 anos<br>
-            transformando couro<br>
-            em <em>desejo.</em>
+      <div class="campanha-grid">
+        <div class="campanha-copy">
+          <span class="section-label">A campanha</span>
+          <h2 class="section-title">
+            Uma jogada certeira<br>
+            para o dia mais<br>
+            <em>romântico do ano.</em>
           </h2>
-          <p class="brand-body brand-body--dark">
-            A Carmen Steffens nasceu com uma missão clara: criar peças de moda feminina que unem
-            couro legítimo, design autoral e acabamento impecável. Centenas de lojas pelo mundo
-            e uma promessa que nunca mudou.
+          <p class="campanha-body">
+            O Dia dos Namorados é um momento estratégico — e a <strong>Carmen Steffens</strong>
+            transformou essa data em uma experiência especial com a campanha
+            <strong>Game of Love</strong>.
           </p>
-          <p class="brand-body brand-body--dark brand-body--highlight">
-            Não é só uma bolsa. É uma Carmen Steffens.
+          <p class="campanha-body">
+            Com referências ao universo dos jogos, a campanha convida você a viver
+            o amor como uma combinação de encontros, escolhas e detalhes que se
+            completam a cada jogada. O presente perfeito nasce de uma escolha certeira.
           </p>
-          <p class="brand-body brand-body--dark">
-            Quando você toca o couro, sente a diferença. Quando você usa, as pessoas percebem.
-            E quando você abre o guarda-roupa e vê aquela peça ali, sabe que fez a escolha certa.
+          <p class="campanha-body">
+            <strong>Couro legítimo, design exclusivo, acabamento impecável.</strong>
+            Cada peça Carmen Steffens é uma declaração que fica — muito depois
+            do Dia dos Namorados.
           </p>
-          <div class="brand-details">
-            <div class="brand-detail-item">
-              <h4>Couro Legítimo</h4>
-              <p>Selecionado e tratado para durar anos sem perder a beleza. Nada de sintético. O toque, o cheiro, o acabamento — tudo real.</p>
-            </div>
-            <div class="brand-detail-item">
-              <h4>Design Autoral</h4>
-              <p>Coleções criadas por designers brasileiros que acompanham tendências internacionais. Peças únicas que ninguém mais vai ter.</p>
-            </div>
-            <div class="brand-detail-item">
-              <h4>700+ Lojas no Mundo</h4>
-              <p>Presença em 5 continentes. A mesma qualidade de Miami agora em Itumbiara — no Centro da sua cidade.</p>
-            </div>
-          </div>
         </div>
-        <div class="brand-image">
-          <img src="images/insta-look-05.jpg" alt="Coleção Carmen Steffens Itumbiara">
+        <div class="campanha-image">
+          <img src="images/insta-bolsa-principal.jpg" alt="Coleção Game of Love — Carmen Steffens">
+          <div class="campanha-image-badge">Game of Love &hearts;</div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ══ 03 PRODUTOS ════════════════════════════════════════════ -->
-  <section class="products">
+  <!-- ══ 03 BRINDE EXCLUSIVO ════════════════════════════════════ -->
+  <section class="brinde">
     <div class="container">
-      <p class="section-label">Coleção</p>
+      <div class="brinde-inner">
+        <div class="brinde-domino">
+          <div class="brinde-tile">
+            <div class="brinde-dots"><div class="brinde-dot"></div><div class="brinde-dot"></div><div class="brinde-dot"></div><div class="brinde-dot"></div></div>
+            <div class="brinde-dots"><div class="brinde-dot"></div><div class="brinde-dot"></div></div>
+          </div>
+          <div class="brinde-tile">
+            <div class="brinde-dots"><div class="brinde-dot"></div><div class="brinde-dot"></div><div class="brinde-dot"></div></div>
+            <div class="brinde-dots"><div class="brinde-dot"></div><div class="brinde-dot"></div><div class="brinde-dot"></div></div>
+          </div>
+          <div class="brinde-tile">
+            <div class="brinde-dots"><div class="brinde-dot"></div></div>
+            <div class="brinde-dots"><div class="brinde-dot"></div><div class="brinde-dot"></div><div class="brinde-dot"></div><div class="brinde-dot"></div></div>
+          </div>
+        </div>
+        <span class="section-label" style="justify-content:center;display:flex">Brinde exclusivo</span>
+        <h2 class="brinde-title">
+          Nas compras acima de<br>
+          <em>R$&nbsp;2.999,90</em><br>
+          você ganha o dominó exclusivo CS.
+        </h2>
+        <p class="brinde-body">
+          O dominó exclusivo Carmen Steffens — parte do universo Game of Love —
+          vai junto com sua compra em itens da coleção vigente.
+          Uma peça colecionável que transforma o momento de presentear
+          em uma experiência inesquecível.
+        </p>
+        <div class="brinde-valor">Compras acima de R$&nbsp;2.999,90 · Coleção vigente</div>
+        <p class="brinde-obs">
+          Válido enquanto durarem os estoques. Período da ação: 26/05 a 12/06.<br>
+          Disponível na loja física de Itumbiara e pedidos pelo WhatsApp.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ 04 PRODUTOS ════════════════════════════════════════════ -->
+  <section class="produtos">
+    <div class="container">
+      <span class="section-label">Catálogo</span>
       <h2 class="section-title">
-        Peças que falam antes<br>
-        de você <em>dizer uma palavra.</em>
+        Presentes que <em>nunca</em><br>
+        saem de estilo.
       </h2>
-      <div class="products-grid">
+      <div class="produtos-grid">
 
-        <article class="product-card">
-          <div class="product-img-wrap">
-            <img src="images/insta-bolsa-principal.jpg" alt="Bolsa CS couro legítimo" loading="lazy">
-            <span class="product-badge">VIP FIRST</span>
+        <article class="produto-card reveal">
+          <div class="produto-img-wrap">
+            <img src="images/insta-bolsa-principal.jpg" alt="Bolsa Carmen Steffens couro" loading="lazy">
+            <span class="produto-badge">&#9829; PRESENTE IDEAL</span>
           </div>
-          <div class="product-info">
-            <span class="product-category">Bolsas</span>
-            <h3>A bolsa que vira <em>assinatura.</em></h3>
-            <p>Couro legítimo com ferragens exclusivas. A bolsa Carmen Steffens não acompanha o look. <strong>Ela é o look.</strong></p>
-            <p class="product-cta-text">↗ Membros VIP compram com até 15% off</p>
+          <div class="produto-info">
+            <span class="produto-category">Bolsas</span>
+            <h3>A bolsa que ela <em>nunca esquece.</em></h3>
+            <p>Couro legítimo com ferragens exclusivas. O presente que ela vai usar todo dia — e lembrar de você a cada look.</p>
+            <p class="produto-cta-hint">↗ VIP tem acesso antecipado + desconto</p>
           </div>
         </article>
 
-        <article class="product-card product-card--featured">
-          <div class="product-img-wrap">
-            <img src="images/insta-look-01.jpg" alt="Look Carmen Steffens Itumbiara" loading="lazy">
-            <span class="product-badge">NOVO</span>
+        <article class="produto-card reveal">
+          <div class="produto-img-wrap">
+            <img src="images/insta-look-02.jpg" alt="Conjunto Carmen Steffens" loading="lazy">
+            <span class="produto-badge">COLEÇÃO</span>
           </div>
-          <div class="product-info">
-            <span class="product-category">Nova Coleção</span>
-            <h3>Estilo que <em>chega primeiro.</em></h3>
-            <p>Peças da nova coleção que chegam ao grupo VIP antes do Instagram. Você escolhe e reserva enquanto outras ainda estão esperando o teaser.</p>
-            <p class="product-cta-text">↗ Grupo VIP vê 48h antes de todo mundo</p>
-          </div>
-        </article>
-
-        <article class="product-card">
-          <div class="product-img-wrap">
-            <img src="images/insta-look-02.jpg" alt="Acessórios Carmen Steffens" loading="lazy">
-            <span class="product-badge">MAIS DESEJADA</span>
-          </div>
-          <div class="product-info">
-            <span class="product-category">Acessórios &amp; Couro</span>
-            <h3>Do couro ao tecido, <em>tudo com a mesma alma.</em></h3>
-            <p>Carteiras, cintos, clutches — cada detalhe em couro de verdade. O acabamento que você sente e as pessoas notam.</p>
-            <p class="product-cta-text">↗ Frete grátis VIP acima de R$&nbsp;1.599</p>
+          <div class="produto-info">
+            <span class="produto-category">Conjuntos</span>
+            <h3>O look completo,<br><em>do detalhe ao couro.</em></h3>
+            <p>Jaquetas, blusas e peças em couro que se combinam com tudo. O guarda-roupa que inspira confiança todos os dias.</p>
+            <p class="produto-cta-hint">↗ Veja no grupo VIP antes do Instagram</p>
           </div>
         </article>
 
-        <article class="product-card">
-          <div class="product-img-wrap">
-            <img src="images/insta-look-04.jpg" alt="Coleção premium Carmen Steffens" loading="lazy">
+        <article class="produto-card reveal">
+          <div class="produto-img-wrap">
+            <img src="images/insta-look-04.jpg" alt="Look Carmen Steffens" loading="lazy">
+            <span class="produto-badge">ALTO INVERNO</span>
           </div>
-          <div class="product-info">
-            <span class="product-category">Premium</span>
-            <h3>Investimento que <em>valoriza com o tempo.</em></h3>
-            <p>Couro legítimo envelhece com nobreza. Cada peça CS fica mais bonita conforme você usa — não o contrário.</p>
-            <p class="product-cta-text">↗ Condição especial de parcelamento para membros</p>
-          </div>
-        </article>
-
-        <article class="product-card">
-          <div class="product-img-wrap">
-            <img src="images/new-produto-c.jpg" alt="Carmen Steffens couro natural" loading="lazy">
-            <span class="product-badge">EXCLUSIVO</span>
-          </div>
-          <div class="product-info">
-            <span class="product-category">Couro Natural</span>
-            <h3>O toque que você <em>não esquece.</em></h3>
-            <p>Couro selecionado e tratado com processo artesanal. Cada peça é única — com variações naturais que comprovam a autenticidade.</p>
-            <p class="product-cta-text">↗ Experimente na loja ou veja pelo WhatsApp</p>
+          <div class="produto-info">
+            <span class="produto-category">Alto Inverno 2026</span>
+            <h3>O inverno mais<br><em>elegante da coleção.</em></h3>
+            <p>Peças da coleção Alto Inverno 2026 em couro de verdade — que envelhece com nobreza e fica mais bonito com o uso.</p>
+            <p class="produto-cta-hint">↗ Reserva antecipada para membros VIP</p>
           </div>
         </article>
 
-        <article class="product-card">
-          <div class="product-img-wrap">
+        <article class="produto-card reveal">
+          <div class="produto-img-wrap">
+            <img src="images/gallery-01-bolsa-verde.jpg" alt="Bolsa CS couro verde" loading="lazy">
+          </div>
+          <div class="produto-info">
+            <span class="produto-category">Bolsas</span>
+            <h3>Cor da estação,<br><em>qualidade atemporal.</em></h3>
+            <p>As cores da estação em couro legítimo selecionado. Cada peça é única — com variações naturais que comprovam a autenticidade.</p>
+            <p class="produto-cta-hint">↗ Frete grátis VIP acima de R$&nbsp;1.599</p>
+          </div>
+        </article>
+
+        <article class="produto-card reveal">
+          <div class="produto-img-wrap">
+            <img src="images/new-produto-c.jpg" alt="Carmen Steffens Game of Love" loading="lazy">
+            <span class="produto-badge">&#9829; GAME OF LOVE</span>
+          </div>
+          <div class="produto-info">
+            <span class="produto-category">Exclusivo · Namorados</span>
+            <h3>O presente da<br><em>jogada certeira.</em></h3>
+            <p>Acima de R$2.999,90 em peças da coleção você ainda leva o dominó exclusivo CS. Uma combinação que só existe agora.</p>
+            <p class="produto-cta-hint">↗ Válido até 12/06 ou esgotar estoque</p>
+          </div>
+        </article>
+
+        <article class="produto-card reveal">
+          <div class="produto-img-wrap">
             <img src="images/insta-look-05.jpg" alt="Carmen Steffens calçados" loading="lazy">
           </div>
-          <div class="product-info">
-            <span class="product-category">Calçados</span>
-            <h3>Cada passo com <em>mais confiança.</em></h3>
-            <p>Calçados Carmen Steffens combinam couro legítimo com conforto real. Do salto ao flat, todas com o mesmo acabamento de grife.</p>
-            <p class="product-cta-text">↗ Experimente na loja — R. Padre Florentino, 25</p>
+          <div class="produto-info">
+            <span class="produto-category">Calçados</span>
+            <h3>Cada passo com<br><em>mais confiança.</em></h3>
+            <p>Calçados CS em couro legítimo que combinam beleza e conforto real. Do salto ao flat, sempre com acabamento de grife.</p>
+            <p class="produto-cta-hint">↗ Experimente na loja ou pelo WhatsApp</p>
           </div>
         </article>
 
@@ -190,346 +1001,142 @@
     </div>
   </section>
 
-  <!-- ══ 04 POR QUE CS ITUMBIARA (fundo claro) ════════════════ -->
-  <section class="why-cs why-cs--light">
+  <!-- ══ 05 PERÍODO ════════════════════════════════════════════ -->
+  <section class="periodo">
     <div class="container">
-      <p class="section-label section-label--dark">Nossa loja</p>
-      <h2 class="section-title section-title--dark">
-        A experiência Carmen Steffens<br>
-        sem sair de <em class="em--warm">Itumbiara.</em>
-      </h2>
-      <div class="why-grid">
-        <div class="why-card why-card--dark">
-          <div class="why-icon">
-            <svg width="28" height="28" viewBox="0 0 28 28" fill="none"><path d="M14 2L10.5 9.5H2.5L9 14.5L6.5 22L14 17.5L21.5 22L19 14.5L25.5 9.5H17.5L14 2Z" stroke="#B8956A" stroke-width="1.5" stroke-linejoin="round"/></svg>
-          </div>
-          <h3>Atendimento de Verdade</h3>
-          <p>Aqui você não é um número. Cada cliente é atendida pelo nome, com atenção ao que você precisa. A equipe CS Itumbiara conhece cada peça e sabe exatamente o que combina com você.</p>
+      <div class="periodo-inner">
+        <div class="periodo-copy">
+          <h2>Campanha válida<br>por tempo <em style="font-style:italic">limitado.</em></h2>
+          <p>Não perca a chance de garantir o brinde exclusivo.<br>Enquanto durarem os estoques.</p>
         </div>
-        <div class="why-card why-card--dark">
-          <div class="why-icon">
-            <svg width="28" height="28" viewBox="0 0 28 28" fill="none"><circle cx="14" cy="10" r="5" stroke="#B8956A" stroke-width="1.5"/><path d="M3 26C3 20 7.9 16 14 16C20.1 16 25 20 25 26" stroke="#B8956A" stroke-width="1.5" stroke-linecap="round"/></svg>
+        <div class="periodo-dates">
+          <div class="periodo-date">
+            <div class="dia">26</div>
+            <div class="mes">Maio</div>
           </div>
-          <h3>Você Toca Antes de Comprar</h3>
-          <p>Nada substitui sentir o couro na mão, experimentar o calçado, ver a cor de verdade. Comprar presencialmente na CS Itumbiara é uma experiência que loja online não oferece.</p>
-        </div>
-        <div class="why-card why-card--dark">
-          <div class="why-icon">
-            <svg width="28" height="28" viewBox="0 0 28 28" fill="none"><path d="M14 3L4 26H24L14 3Z" stroke="#B8956A" stroke-width="1.5" stroke-linejoin="round"/><line x1="14" y1="3" x2="14" y2="26" stroke="#B8956A" stroke-width="1" stroke-dasharray="2 2"/></svg>
+          <div class="periodo-divider">—</div>
+          <div class="periodo-date">
+            <div class="dia">12</div>
+            <div class="mes">Junho</div>
           </div>
-          <h3>No Coração de Itumbiara</h3>
-          <p>R. Padre Florentino, 25 — Centro. Fácil de chegar. A vitrine já te convida. O interior te faz querer ficar. E quando você sai, já está pensando na próxima visita.</p>
-        </div>
-        <div class="why-card why-card--dark">
-          <div class="why-icon">
-            <svg width="28" height="28" viewBox="0 0 28 28" fill="none"><rect x="2" y="6" width="24" height="18" rx="1" stroke="#B8956A" stroke-width="1.5"/><path d="M2 12H26" stroke="#B8956A" stroke-width="1.5"/><path d="M9 3V9M19 3V9" stroke="#B8956A" stroke-width="1.5" stroke-linecap="round"/></svg>
-          </div>
-          <h3>Enviamos Para Todo o Brasil</h3>
-          <p>Não mora em Itumbiara? Atendemos pelo WhatsApp com fotos e vídeos de cada peça. Enviamos para qualquer cidade com embalagem premium e o mesmo cuidado de sempre.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ══ 05 PROVA SOCIAL ════════════════════════════════════════ -->
-  <section class="social-proof">
-    <div class="container">
-      <p class="section-label">Quem já conhece</p>
-      <div class="proof-headline-row">
-        <h2 class="section-title proof-title">
-          Mulheres de Itumbiara<br>
-          que escolheram<br>
-          <em>não abrir mão.</em>
-        </h2>
-        <div class="proof-number">
-          <span class="proof-big-num">527</span>
-          <span class="proof-big-label">clientes VIP<br>em Itumbiara</span>
-        </div>
-      </div>
-      <div class="testimonials-grid">
-        <div class="testimonial-card">
-          <blockquote>"Comprei minha primeira bolsa Carmen Steffens há 3 anos. Uso até hoje, todo dia, e parece nova. Nenhuma outra marca me deu essa durabilidade com esse visual."</blockquote>
-          <cite>— Fernanda M., 34 anos · Membro VIP há 5 meses</cite>
-        </div>
-        <div class="testimonial-card">
-          <blockquote>"O atendimento é outro nível. A equipe me mandou foto de uma sandália que tinha acabado de chegar e combinou perfeito com o vestido que eu tinha comprado antes. Isso não tem preço."</blockquote>
-          <cite>— Patrícia R., 41 anos · Membro VIP há 4 meses</cite>
-        </div>
-        <div class="testimonial-card">
-          <blockquote>"Eu achava caro até comprar a primeira peça. Depois que você vê a qualidade do couro, o acabamento — você entende que é investimento. Não volto mais pra marca barata."</blockquote>
-          <cite>— Camila T., 28 anos · Membro VIP há 3 meses</cite>
-        </div>
-        <div class="testimonial-card testimonial-card--highlight">
-          <blockquote>"Minhas amigas de Goiânia ficam impressionadas quando eu conto que tem Carmen Steffens em Itumbiara. Elas precisam ir ao shopping — eu vou a pé no Centro."</blockquote>
-          <cite>— Luciana F., 37 anos · Membro VIP há 6 meses</cite>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ══ 06 GALERIA EDITORIAL (8 fotos) ════════════════════════ -->
-  <section class="gallery-editorial">
-    <div class="container gallery-editorial-header">
-      <p class="section-label">Editorial</p>
-      <h2 class="section-title">
-        Cada detalhe foi pensado<br>
-        para <em>ser notado.</em>
-      </h2>
-    </div>
-    <div class="gallery-mega-grid">
-      <!-- Coluna esquerda: 1 tall + 1 -->
-      <div class="gmg-col gmg-col--left">
-        <figure class="gmg-item gmg-item--tall">
-          <img src="images/insta-look-01.jpg" alt="Editorial Carmen Steffens" loading="lazy">
-          <figcaption>Look editorial — Coleção atual</figcaption>
-        </figure>
-        <figure class="gmg-item">
-          <img src="images/gallery-01-bolsa-verde.jpg" alt="Bolsa verde couro legítimo" loading="lazy">
-          <figcaption>Bolsa em couro legítimo — cor da estação</figcaption>
-        </figure>
-      </div>
-      <!-- Centro: 1 wide + 2 -->
-      <div class="gmg-col gmg-col--center">
-        <figure class="gmg-item gmg-item--wide">
-          <img src="images/insta-bolsa-principal.jpg" alt="Nova Coleção CS Itumbiara" loading="lazy">
-          <figcaption>Nova Coleção — disponível no grupo VIP primeiro</figcaption>
-        </figure>
-        <div class="gmg-row">
-          <figure class="gmg-item">
-            <img src="images/insta-look-02.jpg" alt="Detalhe couro CS" loading="lazy">
-            <figcaption>O acabamento que só couro real tem</figcaption>
-          </figure>
-          <figure class="gmg-item">
-            <img src="images/insta-look-03.jpg" alt="Acessórios CS" loading="lazy">
-            <figcaption>Acessórios — detalhes que definem o look</figcaption>
-          </figure>
-        </div>
-      </div>
-      <!-- Coluna direita: 1 + 1 tall -->
-      <div class="gmg-col gmg-col--right">
-        <figure class="gmg-item">
-          <img src="images/gallery-05-bolsa-bege.jpg" alt="Bolsa bege CS" loading="lazy">
-          <figcaption>Clássico atemporal — bolsa que você usa por anos</figcaption>
-        </figure>
-        <figure class="gmg-item gmg-item--tall">
-          <img src="images/insta-look-05.jpg" alt="Coleção premium CS" loading="lazy">
-          <figcaption>Couro que envelhece com nobreza</figcaption>
-        </figure>
-      </div>
-    </div>
-    <div class="gallery-life-strip">
-      <figure class="gls-item">
-        <img src="images/gallery-04-lifestyle-loja.jpg" alt="Experiência Carmen Steffens Itumbiara" loading="lazy">
+  <!-- ══ 06 GALERIA ════════════════════════════════════════════ -->
+  <section class="galeria">
+    <div class="galeria-grid">
+      <figure class="gal-item gal-item--tall reveal">
+        <img src="images/insta-look-01.jpg" alt="Carmen Steffens Namorados" loading="lazy">
       </figure>
-      <figure class="gls-item">
-        <img src="images/insta-look-04.jpg" alt="Look exclusivo CS" loading="lazy">
+      <figure class="gal-item reveal">
+        <img src="images/insta-look-02.jpg" alt="Carmen Steffens couro" loading="lazy">
       </figure>
-      <figure class="gls-item">
-        <img src="images/new-colecao-destaque.jpg" alt="Destaque da coleção" loading="lazy">
+      <figure class="gal-item reveal">
+        <img src="images/gallery-05-bolsa-bege.jpg" alt="Bolsa CS" loading="lazy">
       </figure>
-      <figure class="gls-item">
-        <img src="images/gallery-06-logo-cs.jpg" alt="Carmen Steffens — Couro Legítimo" loading="lazy">
+      <figure class="gal-item gal-item--tall reveal">
+        <img src="images/insta-look-03.jpg" alt="Look Game of Love" loading="lazy">
       </figure>
-    </div>
-  </section>
-
-  <!-- ══ 06b LOOKBOOK INSTAGRAM ═════════════════════════════════ -->
-  <section class="lookbook">
-    <div class="container lookbook-header">
-      <p class="section-label">@carmensteffens.itumbiara</p>
-      <h2 class="section-title">
-        Veja o que nossas<br>
-        clientes estão <em>usando agora.</em>
-      </h2>
-    </div>
-    <div class="lookbook-grid">
-      <figure class="lbk-item">
-        <img src="images/insta-vitrine-01.jpg" alt="Carmen Steffens Itumbiara" loading="lazy">
-        <div class="lbk-overlay"><span>Ver no Instagram ↗</span></div>
-      </figure>
-      <figure class="lbk-item lbk-item--tall">
-        <img src="images/new-produto-e.jpg" alt="Carmen Steffens couro" loading="lazy">
-        <div class="lbk-overlay"><span>Ver no Instagram ↗</span></div>
-      </figure>
-      <figure class="lbk-item">
-        <img src="images/insta-vitrine-02.jpg" alt="Carmen Steffens produto" loading="lazy">
-        <div class="lbk-overlay"><span>Ver no Instagram ↗</span></div>
-      </figure>
-      <figure class="lbk-item lbk-item--wide">
+      <figure class="gal-item gal-item--wide reveal">
         <img src="images/new-editorial-grande.jpg" alt="Carmen Steffens editorial" loading="lazy">
-        <div class="lbk-overlay"><span>Ver no Instagram ↗</span></div>
       </figure>
-      <figure class="lbk-item">
-        <img src="images/gallery-03-detalhe-jaqueta.jpg" alt="Detalhe couro CS" loading="lazy">
-        <div class="lbk-overlay"><span>Ver no Instagram ↗</span></div>
+      <figure class="gal-item reveal">
+        <img src="images/insta-vitrine-01.jpg" alt="CS Itumbiara" loading="lazy">
       </figure>
-      <figure class="lbk-item">
-        <img src="images/new-produto-d.jpg" alt="Acessórios Carmen Steffens" loading="lazy">
-        <div class="lbk-overlay"><span>Ver no Instagram ↗</span></div>
-      </figure>
-      <figure class="lbk-item lbk-item--tall">
-        <img src="images/gallery-02-editorial-modelo.jpg" alt="Look Carmen Steffens" loading="lazy">
-        <div class="lbk-overlay"><span>Ver no Instagram ↗</span></div>
-      </figure>
-      <figure class="lbk-item">
-        <img src="images/insta-vitrine-03.jpg" alt="Carmen Steffens vitrine" loading="lazy">
-        <div class="lbk-overlay"><span>Ver no Instagram ↗</span></div>
-      </figure>
-    </div>
-    <div class="lookbook-cta">
-      <a href="https://www.instagram.com/carmensteffens.itumbiara" class="btn-ghost" target="_blank" rel="noopener">
-        Ver mais no Instagram →
-      </a>
     </div>
   </section>
 
-  <!-- ══ 07 EXPERIÊNCIA VIP (fundo claro) ══════════════════════ -->
-  <section class="vip-experience vip-experience--light">
+  <!-- ══ 07 VIP CTA ════════════════════════════════════════════ -->
+  <section class="vip-cta">
     <div class="container">
-      <div class="vip-inner">
-        <div class="vip-copy">
-          <p class="section-label section-label--dark">Acesso privilegiado</p>
-          <h2 class="vip-title vip-title--dark">
-            Quem conhece a Carmen<br>
-            Steffens quer mais.<br>
-            Por isso criamos o<br>
-            <em class="em--warm">Grupo VIP.</em>
+      <div class="vip-cta-inner">
+        <div class="vip-cta-copy">
+          <span class="section-label">Acesso exclusivo</span>
+          <h2 class="section-title">
+            As melhores peças<br>
+            para presentear chegam<br>
+            <em>primeiro no grupo.</em>
           </h2>
-          <p class="vip-body vip-body--dark">
-            O Grupo VIP Carmen Steffens Itumbiara é o canal exclusivo onde nossas clientes
-            mais fiéis têm acesso antecipado a tudo. Lançamentos antes do Instagram.
-            Condições que não vão para o feed. Reservas de peças antes de esgotarem.
+          <p class="vip-body">
+            O Grupo VIP Carmen Steffens Itumbiara é onde nossas clientes
+            mais fiéis têm acesso antecipado às novidades, condições especiais
+            e reservas de peças antes de esgotarem.
           </p>
-          <p class="vip-body vip-body--dark">
-            Mais de 527 mulheres de Itumbiara e região já fazem parte. A entrada é gratuita.
-          </p>
-          <a href="https://chat.whatsapp.com/LINK_DO_GRUPO" class="btn-cta btn-cta--warm" onclick="trackCta('vip')" target="_blank" rel="noopener">
+          <div class="vip-benefits">
+            <div class="vip-benefit-item"><span class="vip-check">✓</span><span>Catálogo Game of Love antes de todo mundo</span></div>
+            <div class="vip-benefit-item"><span class="vip-check">✓</span><span>Descontos de até 15% exclusivos do grupo</span></div>
+            <div class="vip-benefit-item"><span class="vip-check">✓</span><span>Reserva do brinde dominó CS antecipada</span></div>
+            <div class="vip-benefit-item"><span class="vip-check">✓</span><span>Frete grátis em compras acima de R$&nbsp;1.599</span></div>
+            <div class="vip-benefit-item"><span class="vip-check">✓</span><span>Atendimento direto com a equipe CS</span></div>
+            <div class="vip-benefit-item"><span class="vip-check">✓</span><span>Condições especiais de parcelamento</span></div>
+          </div>
+          <a href="https://chat.whatsapp.com/LINK_DO_GRUPO" class="btn-cta btn-cta--gold" target="_blank" rel="noopener">
             ENTRAR NO GRUPO VIP
           </a>
-          <p class="vip-microcopy">Gratuito. Sem compromisso. Um toque para sair se quiser.</p>
+          <p class="vip-microcopy">Gratuito. Sem compromisso. Saia quando quiser.</p>
         </div>
-        <div class="vip-benefits">
-          <div class="vip-benefit-item"><span class="vip-check">✓</span><span>Lançamentos 48h antes do Instagram</span></div>
-          <div class="vip-benefit-item"><span class="vip-check">✓</span><span>Descontos de até 15% exclusivos do grupo</span></div>
-          <div class="vip-benefit-item"><span class="vip-check">✓</span><span>Frete grátis em compras acima de R$&nbsp;1.599</span></div>
-          <div class="vip-benefit-item"><span class="vip-check">✓</span><span>Reserva de peças antes de esgotarem</span></div>
-          <div class="vip-benefit-item"><span class="vip-check">✓</span><span>Atendimento direto com a equipe CS</span></div>
-          <div class="vip-benefit-item"><span class="vip-check">✓</span><span>Ofertas relâmpago só para membros</span></div>
-          <div class="vip-benefit-item"><span class="vip-check">✓</span><span>Convites para eventos e lançamentos na loja</span></div>
+        <div class="vip-image reveal">
+          <img src="images/insta-look-05.jpg" alt="Carmen Steffens VIP">
+          <div class="vip-image-overlay"></div>
+          <div class="vip-image-tag">&#9829; Grupo VIP</div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ══ 08 ANTI-OBJEÇÃO ════════════════════════════════════════ -->
-  <section class="anti-objection">
-    <div class="container">
-      <p class="section-label">Suas dúvidas</p>
-      <h2 class="section-title" style="margin-bottom:48px">A gente sabe o que você está pensando.</h2>
-      <div class="ao-grid">
-        <div class="ao-card">
-          <p class="ao-question">"Carmen Steffens não é caro demais?"</p>
-          <p class="ao-answer">Caro é comprar 3 bolsas sintéticas por ano que descascam, desbotam e você tem vergonha de usar depois de 4 meses. Uma bolsa Carmen Steffens em couro legítimo dura anos — e quanto mais você usa, mais bonita fica. O investimento por uso é menor do que qualquer marca de shopping.</p>
-        </div>
-        <div class="ao-card">
-          <p class="ao-question">"Vai ser grupo chato que manda mensagem o dia inteiro?"</p>
-          <p class="ao-answer">Não. No máximo 3–4 mensagens por semana — só quando tem novidade de verdade. Lançamento novo, condição especial ou algo que você realmente precisa ver primeiro. Nada de bom dia com florzinha.</p>
-        </div>
-        <div class="ao-card">
-          <p class="ao-question">"Preciso comprar alguma coisa para entrar?"</p>
-          <p class="ao-answer">Não. A entrada é gratuita e sem compromisso. Muitas clientes entraram "só para dar uma olhada" e hoje são as mais ativas do grupo. Você decide no seu tempo, sem pressão.</p>
-        </div>
-        <div class="ao-card">
-          <p class="ao-question">"Posso sair quando quiser?"</p>
-          <p class="ao-answer">Claro. Um toque e você sai. Mas spoiler: em 6 meses de grupo, menos de 3% das membros saíram. As outras estão ocupadas aproveitando condições que só elas têm.</p>
-        </div>
-        <div class="ao-card">
-          <p class="ao-question">"Não tem loja Carmen Steffens mais perto de mim?"</p>
-          <p class="ao-answer">Se você está em Itumbiara, Uberlândia, Ituiutaba ou região, a CS Itumbiara é a sua loja. E mesmo que esteja mais longe, atendemos pelo WhatsApp com fotos, vídeos e enviamos para todo o Brasil.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ══ 09 BÔNUS / ROLETA ══════════════════════════════════════ -->
-  <section class="bonus">
-    <div class="container">
-      <div class="bonus-inner">
-        <p class="section-label">Presente de entrada</p>
-        <h2 class="bonus-title">Entre esta semana e gire a <em>Roleta de Prêmios.</em></h2>
-        <p class="bonus-desc">Toda nova membra que entrar no grupo recebe acesso exclusivo à Roleta de Prêmios — com descontos de até 15%, frete grátis e brindes especiais.</p>
-        <p class="bonus-desc"><strong>A roleta fica disponível por 7 dias após a entrada.</strong><br>Depois, só quem já é membro tem acesso.</p>
-        <div class="bonus-prizes">
-          <p class="bonus-prizes-title">O que você pode ganhar:</p>
-          <ul>
-            <li class="bonus-prize-item">Desconto de 5% a 15% na próxima compra</li>
-            <li class="bonus-prize-item">Frete grátis sem valor mínimo</li>
-            <li class="bonus-prize-item">Brinde surpresa na retirada na loja</li>
-            <li class="bonus-prize-item">Condição especial de parcelamento</li>
-            <li class="bonus-prize-item">Acesso antecipado ao próximo lançamento</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ══ 10 CTA FINAL ═══════════════════════════════════════════ -->
+  <!-- ══ 08 CTA FINAL ══════════════════════════════════════════ -->
   <section class="cta-final">
-    <div class="container">
-      <div class="urgency-badge">VAGAS LIMITADAS</div>
+    <div class="cta-final-content container">
+      <div class="urgency-badge">&#9829; CAMPANHA LIMITADA — ATÉ 12/JUN</div>
       <h2 class="cta-final-title">
-        A Carmen Steffens está<br>
-        em Itumbiara. O grupo VIP<br>
-        está <em>quase lotado.</em>
+        O presente certo<br>
+        para o amor <em>certo.</em>
       </h2>
       <p class="cta-final-sub">
-        Você pode continuar comprando moda feminina em qualquer lugar.
-        Ou pode fazer parte do grupo que compra Carmen Steffens com vantagens que ninguém mais tem.
+        Nas compras acima de R$&nbsp;2.999,90 você leva o dominó exclusivo
+        Carmen Steffens. Entre no grupo VIP e garanta sua reserva antes que esgote.
       </p>
-      <a href="https://chat.whatsapp.com/LINK_DO_GRUPO" class="btn-cta btn-cta-final" onclick="trackCta('cta-final')" target="_blank" rel="noopener">
-        ENTRAR E GIRAR A ROLETA
+      <a href="https://chat.whatsapp.com/LINK_DO_GRUPO" class="btn-cta-final" target="_blank" rel="noopener">
+        ENTRAR NO GRUPO VIP AGORA
       </a>
       <p class="cta-guarantee">
-        Gratuito. Se em 7 dias não valeu a pena, sai com um toque.<br>
-        Mas as clientes que ficam? Essas nunca mais voltam para o preço cheio.
+        Gratuito · Sem compromisso · Sai com um toque se quiser<br>
+        Brinde válido enquanto durarem os estoques · Período: 26/05 a 12/06
       </p>
     </div>
   </section>
 
-  <!-- ══ 11 FOOTER ══════════════════════════════════════════════ -->
+  <!-- ══ FOOTER ════════════════════════════════════════════════ -->
   <footer class="footer">
     <div class="container footer-inner">
-      <div class="footer-logo-block">
-        <div class="cs-logo cs-logo--footer">
-          <span class="cs-logo-monogram cs-logo-monogram--lg">CS</span>
+      <div>
+        <div class="cs-logo">
+          <span class="cs-logo-monogram" style="font-size:32px">CS</span>
           <div class="cs-logo-text">
             <span class="cs-logo-brand">CARMEN STEFFENS</span>
             <span class="cs-logo-city">ITUMBIARA</span>
           </div>
         </div>
-        <p class="footer-tagline">Moda premium. Couro legítimo. Experiência única.</p>
+        <p class="footer-tagline">Game of Love · Dia dos Namorados 2026</p>
       </div>
-      <div class="footer-info-block">
-        <address class="footer-address">
-          <span>&#128205; R. Padre Florentino, 25 — Centro, Itumbiara/GO</span>
-          <span>&#128241; (64) 99249-3071</span>
-          <span>&#128248; @carmensteffens.itumbiara</span>
-          <span>&#128337; Seg–Sex: 9h às 18h &nbsp;|&nbsp; Sáb: 9h às 13h</span>
-        </address>
-      </div>
+      <address class="footer-address">
+        <span>&#128205; R. Padre Florentino, 25 — Centro, Itumbiara/GO</span>
+        <span>&#128241; (64) 99249-3071</span>
+        <span>&#128248; @carmensteffens.itumbiara</span>
+        <span>&#128337; Seg–Sex: 9h às 18h &nbsp;|&nbsp; Sáb: 9h às 13h</span>
+      </address>
       <div class="footer-trust">
-        <div class="footer-trust-item"><strong>30+</strong><span>anos de mercado</span></div>
-        <div class="footer-trust-item"><strong>700+</strong><span>lojas no mundo</span></div>
+        <div class="footer-trust-item"><strong>26 mai – 12 jun</strong><span>período da campanha</span></div>
+        <div class="footer-trust-item"><strong>R$&nbsp;2.999,90+</strong><span>ganha dominó exclusivo</span></div>
         <div class="footer-trust-item"><strong>Couro</strong><span>legítimo</span></div>
       </div>
-      <p class="footer-copy">&copy; 2025–2026 Carmen Steffens Itumbiara. Todos os direitos reservados.</p>
+      <p class="footer-copy">&copy; 2026 Carmen Steffens Itumbiara · Campanha Game of Love · Todos os direitos reservados.</p>
     </div>
   </footer>
 
   <script>
-    function trackCta(loc) {
-      if (typeof fbq !== 'undefined') fbq('track', 'Lead', { content_name: 'grupo-vip-whatsapp', content_category: loc });
-    }
     var navbar = document.getElementById('navbar');
     window.addEventListener('scroll', function() {
       navbar.classList.toggle('navbar--scrolled', window.scrollY > 60);
@@ -537,7 +1144,7 @@
     var io = new IntersectionObserver(function(entries) {
       entries.forEach(function(e) { if (e.isIntersecting) e.target.classList.add('visible'); });
     }, { threshold: 0.08 });
-    document.querySelectorAll('.why-card, .product-card, .testimonial-card, .ao-card, .vip-benefit-item, .brand-detail-item, .gmg-item, .gls-item, .lbk-item').forEach(function(el) {
+    document.querySelectorAll('.reveal, .produto-card, .gal-item').forEach(function(el) {
       el.classList.add('reveal'); io.observe(el);
     });
   </script>
