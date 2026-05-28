@@ -1049,6 +1049,7 @@ address { font-style: normal; }
 @media (max-width: 640px) {
   .navbar { padding: 16px 20px; }
   .navbar--scrolled { padding: 12px 20px; }
+  .hero-full { padding-top: 72px; }
   .hero-content { align-items: flex-start; }
   .products-grid { grid-template-columns: 1fr 1fr; gap: 12px; }
   .testimonials-grid { grid-template-columns: 1fr; }
