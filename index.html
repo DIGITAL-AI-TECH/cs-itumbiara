@@ -7,7 +7,7 @@
   <meta name="description" content="Game of Love. O presente perfeito para o Dia dos Namorados. Carmen Steffens Itumbiara — couro legítimo, design exclusivo.">
   <meta property="og:title" content="Game of Love — Carmen Steffens Itumbiara">
   <meta property="og:description" content="Nas compras acima de R$2.999,90 você ganha um dominó exclusivo CS. Dia dos Namorados até 12/06.">
-  <meta property="og:image" content="images/insta-look-03.jpg">
+  <meta property="og:image" content="images/pdf/pdf-p1-img7-2731x4096.jpeg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -793,6 +793,53 @@
       html { scroll-behavior: auto; }
       .reveal { transition: none; opacity: 1; transform: none; }
     }
+
+    /* ── EDITORIAL STRIP ──────────────────────────────── */
+    .editorial-strip {
+      position: relative;
+      overflow: hidden;
+      margin: 0;
+    }
+    .editorial-strip-img {
+      position: relative;
+      width: 100%;
+      max-height: 60vh;
+      overflow: hidden;
+    }
+    .editorial-strip-img img {
+      width: 100%;
+      height: 60vh;
+      object-fit: cover;
+      object-position: center 30%;
+      display: block;
+    }
+    .editorial-strip-overlay {
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      padding: 24px 40px;
+      background: linear-gradient(to top, rgba(13,6,9,0.7) 0%, transparent 100%);
+    }
+    .editorial-strip-tag {
+      font-family: 'Inter', sans-serif;
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.75);
+    }
+
+    /* ── CAMPAIGN BANNER STRIP ────────────────────────── */
+    .campaign-banner-strip {
+      width: 100%;
+      overflow: hidden;
+      line-height: 0;
+    }
+    .campaign-banner-strip img {
+      width: 100%;
+      height: auto;
+      display: block;
+      object-fit: cover;
+    }
   </style>
 </head>
 <body>
@@ -814,7 +861,7 @@
   <!-- ══ 01 HERO ════════════════════════════════════════════════ -->
   <section class="hero-full">
     <div class="hero-bg">
-      <img src="images/insta-look-03.jpg" alt="Game of Love — Carmen Steffens" class="hero-bg-img">
+      <img src="images/pdf/pdf-p1-img7-2731x4096.jpeg" alt="Game of Love — Carmen Steffens" class="hero-bg-img">
       <div class="hero-overlay"></div>
     </div>
     <div class="hero-content container">
@@ -865,7 +912,7 @@
           </p>
         </div>
         <div class="campanha-image">
-          <img src="images/insta-bolsa-principal.jpg" alt="Coleção Game of Love — Carmen Steffens">
+          <img src="images/pdf/pdf-p1-img2-2518x4096.jpeg" alt="Coleção Game of Love — Carmen Steffens">
           <div class="campanha-image-badge">Game of Love &hearts;</div>
         </div>
       </div>
@@ -911,6 +958,16 @@
     </div>
   </section>
 
+  <!-- ══ 03b EDITORIAL ════════════════════════════════════════ -->
+  <section class="editorial-strip">
+    <div class="editorial-strip-img">
+      <img src="images/pdf/pdf-p1-img1-4096x2731.jpeg" alt="Game of Love — Carmen Steffens editorial" loading="lazy">
+      <div class="editorial-strip-overlay">
+        <p class="editorial-strip-tag">&#9829; Coleção Game of Love · Alto Inverno 2026</p>
+      </div>
+    </div>
+  </section>
+
   <!-- ══ 04 PRODUTOS ════════════════════════════════════════════ -->
   <section class="produtos">
     <div class="container">
@@ -923,7 +980,7 @@
 
         <article class="produto-card reveal">
           <div class="produto-img-wrap">
-            <img src="images/insta-bolsa-principal.jpg" alt="Bolsa Carmen Steffens couro" loading="lazy">
+            <img src="images/pdf/pdf-p1-img11-2731x4096.jpeg" alt="Bolsa Carmen Steffens couro" loading="lazy">
             <span class="produto-badge">&#9829; PRESENTE IDEAL</span>
           </div>
           <div class="produto-info">
@@ -949,7 +1006,7 @@
 
         <article class="produto-card reveal">
           <div class="produto-img-wrap">
-            <img src="images/insta-look-04.jpg" alt="Look Carmen Steffens" loading="lazy">
+            <img src="images/pdf/pdf-p1-img4-960x1280.jpeg" alt="Look Carmen Steffens" loading="lazy">
             <span class="produto-badge">ALTO INVERNO</span>
           </div>
           <div class="produto-info">
@@ -974,7 +1031,7 @@
 
         <article class="produto-card reveal">
           <div class="produto-img-wrap">
-            <img src="images/new-produto-c.jpg" alt="Carmen Steffens Game of Love" loading="lazy">
+            <img src="images/pdf/pdf-p1-img9-785x1087.jpeg" alt="Carmen Steffens Game of Love" loading="lazy">
             <span class="produto-badge">&#9829; GAME OF LOVE</span>
           </div>
           <div class="produto-info">
@@ -1000,6 +1057,11 @@
       </div>
     </div>
   </section>
+
+  <!-- ══ BANNER STRIP ════════════════════════════════════════ -->
+  <div class="campaign-banner-strip">
+    <img src="images/pdf/pdf-p1-img8-3023x397.jpeg" alt="Game of Love — Carmen Steffens" loading="lazy">
+  </div>
 
   <!-- ══ 05 PERÍODO ════════════════════════════════════════════ -->
   <section class="periodo">
@@ -1028,7 +1090,7 @@
   <section class="galeria">
     <div class="galeria-grid">
       <figure class="gal-item gal-item--tall reveal">
-        <img src="images/insta-look-01.jpg" alt="Carmen Steffens Namorados" loading="lazy">
+        <img src="images/pdf/pdf-p1-img11-2731x4096.jpeg" alt="Carmen Steffens Namorados" loading="lazy">
       </figure>
       <figure class="gal-item reveal">
         <img src="images/insta-look-02.jpg" alt="Carmen Steffens couro" loading="lazy">
@@ -1037,10 +1099,10 @@
         <img src="images/gallery-05-bolsa-bege.jpg" alt="Bolsa CS" loading="lazy">
       </figure>
       <figure class="gal-item gal-item--tall reveal">
-        <img src="images/insta-look-03.jpg" alt="Look Game of Love" loading="lazy">
+        <img src="images/pdf/pdf-p1-img2-2518x4096.jpeg" alt="Look Game of Love" loading="lazy">
       </figure>
       <figure class="gal-item gal-item--wide reveal">
-        <img src="images/new-editorial-grande.jpg" alt="Carmen Steffens editorial" loading="lazy">
+        <img src="images/pdf/pdf-p1-img1-4096x2731.jpeg" alt="Carmen Steffens editorial" loading="lazy">
       </figure>
       <figure class="gal-item reveal">
         <img src="images/insta-vitrine-01.jpg" alt="CS Itumbiara" loading="lazy">
@@ -1078,7 +1140,7 @@
           <p class="vip-microcopy">Gratuito. Sem compromisso. Saia quando quiser.</p>
         </div>
         <div class="vip-image reveal">
-          <img src="images/insta-look-05.jpg" alt="Carmen Steffens VIP">
+          <img src="images/pdf/pdf-p1-img4-960x1280.jpeg" alt="Carmen Steffens VIP">
           <div class="vip-image-overlay"></div>
           <div class="vip-image-tag">&#9829; Grupo VIP</div>
         </div>
