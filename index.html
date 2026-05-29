@@ -841,6 +841,128 @@
       display: block;
       object-fit: cover;
     }
+
+    /* ── POPUP OFERTA EXCLUSIVA ───────────────────────────────── */
+    .popup-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      z-index: 999;
+      background: rgba(13,6,9,0.88);
+      backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(6px);
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+    .popup-overlay.active { display: flex; }
+    .popup-box {
+      background: #1A0D11;
+      border: 1px solid rgba(190,100,120,0.35);
+      border-radius: 4px;
+      max-width: 480px;
+      width: 100%;
+      padding: 48px 40px 40px;
+      position: relative;
+      text-align: center;
+      animation: popupIn 0.35s cubic-bezier(0.34,1.56,0.64,1);
+    }
+    @keyframes popupIn {
+      from { opacity: 0; transform: scale(0.88) translateY(20px); }
+      to   { opacity: 1; transform: scale(1) translateY(0); }
+    }
+    .popup-close {
+      position: absolute;
+      top: 16px; right: 20px;
+      background: none;
+      border: none;
+      color: rgba(255,255,255,0.4);
+      font-size: 22px;
+      cursor: pointer;
+      line-height: 1;
+      transition: color 0.2s;
+    }
+    .popup-close:hover { color: #fff; }
+    .popup-heart {
+      font-size: 32px;
+      margin-bottom: 16px;
+      display: block;
+    }
+    .popup-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(26px, 5vw, 34px);
+      font-weight: 500;
+      color: #FFFFFF;
+      line-height: 1.2;
+      margin-bottom: 12px;
+    }
+    .popup-title em { color: #E8A0B0; font-style: italic; }
+    .popup-desc {
+      font-size: 14px;
+      font-weight: 300;
+      color: rgba(255,255,255,0.7);
+      line-height: 1.6;
+      margin-bottom: 28px;
+    }
+    .popup-coupon {
+      background: rgba(190,100,120,0.12);
+      border: 1.5px dashed #BE6478;
+      border-radius: 4px;
+      padding: 18px 24px;
+      margin-bottom: 28px;
+    }
+    .popup-coupon-label {
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.45);
+      margin-bottom: 8px;
+    }
+    .popup-coupon-code {
+      font-family: 'Inter', monospace;
+      font-size: 28px;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      color: #E8A0B0;
+    }
+    .popup-coupon-info {
+      font-size: 11px;
+      color: rgba(255,255,255,0.4);
+      margin-top: 6px;
+      letter-spacing: 0.05em;
+    }
+    .popup-btn {
+      display: block;
+      width: 100%;
+      background: #BE6478;
+      color: #FFFFFF;
+      font-family: 'Inter', sans-serif;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      padding: 18px 24px;
+      border: none;
+      cursor: pointer;
+      transition: background 0.25s;
+      text-align: center;
+      text-decoration: none;
+    }
+    .popup-btn:hover { background: #A8566A; }
+    .popup-skip {
+      display: block;
+      margin-top: 14px;
+      font-size: 11px;
+      color: rgba(255,255,255,0.3);
+      cursor: pointer;
+      letter-spacing: 0.05em;
+    }
+    .popup-skip:hover { color: rgba(255,255,255,0.6); }
+    @media (max-width: 480px) {
+      .popup-box { padding: 36px 24px 28px; }
+      .popup-coupon-code { font-size: 24px; }
+    }
   </style>
 </head>
 <body>
@@ -877,9 +999,9 @@
         escolhas e detalhes que se completam.
       </p>
       <div class="hero-period">&#9829;&nbsp; CAMPANHA: 26 MAI — 12 JUN</div>
-      <a href="https://chat.whatsapp.com/JJKuqoNPGpAHibRVzV2Qxw?mode=gi_t" class="btn-cta" target="_blank" rel="noopener">
+      <button class="btn-cta" onclick="openVipPopup()">
         VER A COLEÇÃO
-      </a>
+      </button>
       <p class="hero-proof">Loja física no Centro de Itumbiara · Envio para todo o Brasil</p>
     </div>
     <div class="hero-scroll-hint"><span></span></div>
@@ -1135,9 +1257,9 @@
             <div class="vip-benefit-item"><span class="vip-check">✓</span><span>Atendimento direto com a equipe CS</span></div>
             <div class="vip-benefit-item"><span class="vip-check">✓</span><span>Condições especiais de parcelamento</span></div>
           </div>
-          <a href="https://chat.whatsapp.com/JJKuqoNPGpAHibRVzV2Qxw?mode=gi_t" class="btn-cta btn-cta--gold" target="_blank" rel="noopener">
+          <button class="btn-cta btn-cta--gold" onclick="openVipPopup()">
             ENTRAR NO GRUPO VIP
-          </a>
+          </button>
           <p class="vip-microcopy">Gratuito. Sem compromisso. Saia quando quiser.</p>
         </div>
         <div class="vip-image reveal">
@@ -1161,9 +1283,9 @@
         Nas compras acima de R$&nbsp;2.999,90 você leva o dominó exclusivo
         Carmen Steffens. Entre no grupo VIP e garanta sua reserva antes que esgote.
       </p>
-      <a href="https://chat.whatsapp.com/JJKuqoNPGpAHibRVzV2Qxw?mode=gi_t" class="btn-cta-final" target="_blank" rel="noopener">
-        ENTRAR NO GRUPO VIP AGORA
-      </a>
+      <button class="btn-cta-final" onclick="openVipPopup()">
+        QUERO MINHA CONDIÇÃO ESPECIAL
+      </button>
       <p class="cta-guarantee">
         Gratuito · Sem compromisso · Sai com um toque se quiser<br>
         Brinde válido enquanto durarem os estoques · Período: 26/05 a 12/06
@@ -1210,6 +1332,45 @@
     document.querySelectorAll('.reveal, .produto-card, .gal-item').forEach(function(el) {
       el.classList.add('reveal'); io.observe(el);
     });
+
+    // Popup oferta exclusiva
+    function openVipPopup() {
+      document.getElementById('vipPopup').classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeVipPopup() {
+      document.getElementById('vipPopup').classList.remove('active');
+      document.body.style.overflow = '';
+    }
+    document.getElementById('vipPopup').addEventListener('click', function(e) {
+      if (e.target === this) closeVipPopup();
+    });
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') closeVipPopup();
+    });
   </script>
+
+  <!-- ══ POPUP OFERTA EXCLUSIVA ══════════════════════════════ -->
+  <div class="popup-overlay" id="vipPopup" role="dialog" aria-modal="true">
+    <div class="popup-box">
+      <button class="popup-close" onclick="closeVipPopup()" aria-label="Fechar">&#x2715;</button>
+      <span class="popup-heart">&#9829;</span>
+      <h2 class="popup-title">Você acaba de<br>ganhar <em>10% off</em><br>em toda a linha</h2>
+      <p class="popup-desc">
+        Condição exclusiva para quem acessa agora.<br>
+        Use o cupom abaixo em qualquer peça do <strong>Clube de Desconto</strong>.
+      </p>
+      <div class="popup-coupon">
+        <p class="popup-coupon-label">Seu cupom exclusivo</p>
+        <p class="popup-coupon-code">PRIMEIRA10</p>
+        <p class="popup-coupon-info">10% em toda a linha · Clube de Desconto</p>
+      </div>
+      <a href="https://chat.whatsapp.com/JJKuqoNPGpAHibRVzV2Qxw?mode=gi_t" class="popup-btn" target="_blank" rel="noopener" onclick="closeVipPopup()">
+        RESGATAR NO GRUPO VIP &rarr;
+      </a>
+      <span class="popup-skip" onclick="closeVipPopup()">Fechar</span>
+    </div>
+  </div>
+
 </body>
 </html>
